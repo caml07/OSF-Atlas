@@ -1,0 +1,70 @@
+filters:
+  and:
+    - file.inFolder("01 Episodes")
+    - 'type == "episode"'
+
+properties:
+  osf_number:
+    displayName: "OSF #"
+  title:
+    displayName: "Location"
+  status:
+    displayName: "Status"
+  favorite:
+    displayName: "Favorite"
+  published:
+    displayName: "Published"
+  youtube_url:
+    displayName: "YouTube"
+
+views:
+  - type: table
+    name: "All Episodes"
+    order:
+      - osf_number
+      - title
+      - status
+      - favorite
+      - published
+      - youtube_url
+
+  - type: table
+    name: "Favorites"
+    filters:
+      and:
+        - 'favorite == true'
+    order:
+      - osf_number
+      - title
+      - status
+      - youtube_url
+
+  - type: table
+    name: "Unread"
+    filters:
+      and:
+        - 'status == "unread"'
+    order:
+      - osf_number
+      - title
+      - favorite
+
+  - type: table
+    name: "In Progress"
+    filters:
+      and:
+        - 'status == "reading"'
+    order:
+      - osf_number
+      - title
+      - favorite
+
+  - type: table
+    name: "Completed"
+    filters:
+      and:
+        - 'status == "complete"'
+    order:
+      - osf_number
+      - title
+      - favorite

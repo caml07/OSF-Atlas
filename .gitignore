@@ -1,0 +1,13 @@
+# Obsidian local state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache/
+.trash/
+.DS_Store
+
+# Optional local theme install; repo keeps only portable config/snippets
+.obsidian/themes/
+
+# Full source text supplied/owned by the user stays local by default
+99 Local Source Text/*.md
+!99 Local Source Text/README.md
