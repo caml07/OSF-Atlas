@@ -159,6 +159,11 @@ class Renderer:
             for c in knowledge.connections
             if c.status == "confirmed"
         ]
+        candidates = [
+            c.target_episode.note_name
+            for c in knowledge.connections
+            if c.status == "candidate"
+        ]
         cover = f"[[06 Assets/Thumbnails/{thumbnail_name}]]"
         thumbnail_rel = f"../06%20Assets/Thumbnails/{thumbnail_name}"
         safe_title = identity.title.replace('"', "'")
@@ -187,7 +192,9 @@ class Renderer:
             "confirmed_connections: ["
             + ", ".join(f'"[[{name}]]"' for name in confirmed)
             + "]",
-            "candidate_connections: []",
+            "candidate_connections: ["
+            + ", ".join(f'"[[{name}]]"' for name in candidates)
+            + "]",
             "inferred_connections: []",
             "tags: [osf, episode]",
             "cssclasses: [osf-episode]",
@@ -198,6 +205,11 @@ class Renderer:
             "\n".join(f"- [[{name}]]" for name in confirmed)
             if confirmed
             else "_No confirmed connections yet._"
+        )
+        candidate_body = (
+            "\n".join(f"- [[{name}]]" for name in candidates)
+            if candidates
+            else "_No candidate connections yet._"
         )
 
         return (
@@ -221,7 +233,9 @@ class Renderer:
             + "## Connections\n\n"
             + "### Confirmed\n\n"
             + confirmed_body
-            + "\n\n### Candidates\n\n_No candidate connections yet._\n\n"
+            + "\n\n### Candidates\n\n"
+            + candidate_body
+            + "\n\n"
             + "### Inferred\n\n_No inferred connections yet._\n\n"
             + "<!-- OSF:GENERATED:END -->\n\n"
             + "## My Notes\n\n"

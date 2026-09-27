@@ -90,3 +90,39 @@ def test_resolver_confirms_exact_colon_title_variant_to_base_episode() -> None:
     assert update.connections[0].target_episode == catalog[16]
     assert update.connections[0].status == "confirmed"
     assert update.connections[0].evidence_text == "title-variant: Silent Arbiter"
+
+
+def test_resolver_marks_exact_canonical_title_mention_as_candidate() -> None:
+    snapshot = SourceSnapshot(
+        episode=EpisodeRef(number=18, video_id="vid018"),
+        title="018 // Phantom Port - Ambient",
+        description=(
+            "Like the legendary Veiled Monolith, it uses clandestine technology "
+            "to cloak itself in mist."
+        ),
+        published=None,
+        duration_seconds=3600,
+        info={},
+        captions=(),
+        thumbnail=b"image",
+        thumbnail_ext="webp",
+        url="https://www.youtube.com/watch?v=vid018",
+    )
+    parsed = ParsedSource(snapshot, snapshot.description, (), ())
+    catalog = {
+        14: EpisodeIdentity(
+            14,
+            "The Veiled Monolith",
+            "vid014",
+            "OSF 014 - The Veiled Monolith",
+        ),
+        18: EpisodeIdentity(18, "Phantom Port", "vid018", "OSF 018 - Phantom Port"),
+    }
+
+    update = KnowledgeResolver().resolve(parsed, catalog)
+
+    assert len(update.connections) == 1
+    connection = update.connections[0]
+    assert connection.target_episode == catalog[14]
+    assert connection.status == "candidate"
+    assert connection.evidence_text == "Veiled Monolith"

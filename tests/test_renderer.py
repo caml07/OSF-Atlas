@@ -148,3 +148,51 @@ def test_renderer_keeps_empty_human_properties_and_reader_markdown_clean(tmp_pat
     assert "last_read: \n" not in episode
     assert "line with transport spaces\n" in reader
     assert "line with transport spaces   \n" not in reader
+
+
+def test_renderer_shows_candidate_without_annotating_reader_source(tmp_path: Path) -> None:
+    (tmp_path / "01 Episodes").mkdir()
+    (tmp_path / "02 Entities" / "Places").mkdir(parents=True)
+    (tmp_path / "05 Sources" / "018").mkdir(parents=True)
+
+    description = "Like the legendary Veiled Monolith, the port hides in mist."
+    snapshot = SourceSnapshot(
+        episode=EpisodeRef(number=18, video_id="vid018"),
+        title="018 // Phantom Port - Ambient",
+        description=description,
+        published=None,
+        duration_seconds=3600,
+        info={},
+        captions=(),
+        thumbnail=b"image",
+        thumbnail_ext="webp",
+        url="https://www.youtube.com/watch?v=vid018",
+    )
+    parsed = ParsedSource(snapshot, description, (), ())
+    current = EpisodeIdentity(18, "Phantom Port", "vid018", "OSF 018 - Phantom Port")
+    target = EpisodeIdentity(
+        14,
+        "The Veiled Monolith",
+        "vid014",
+        "OSF 014 - The Veiled Monolith",
+    )
+    knowledge = KnowledgeUpdate(
+        EntityIdentity("Phantom Port", 18),
+        (Connection(18, target, "candidate", "Veiled Monolith"),),
+    )
+
+    Renderer(tmp_path).render_episode(
+        identity=current,
+        parsed=parsed,
+        knowledge=knowledge,
+        source_revision="2026-09-27_00-00-00Z",
+        thumbnail_name="018.webp",
+    )
+
+    episode = (tmp_path / "01 Episodes" / "OSF 018 - Phantom Port.md").read_text()
+    reader = (tmp_path / "05 Sources" / "018" / "source.md").read_text()
+
+    assert 'candidate_connections: ["[[OSF 014 - The Veiled Monolith]]"]' in episode
+    assert "- [[OSF 014 - The Veiled Monolith]]" in episode
+    assert "[[OSF 014 - The Veiled Monolith|Veiled Monolith]]" not in reader
+    assert "Veiled Monolith" in reader

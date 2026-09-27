@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from collections.abc import Mapping
 
 from .models import (
@@ -59,6 +60,41 @@ class KnowledgeResolver:
                         evidence_text=f"title-variant: {base_title}",
                     )
                 )
+                seen_targets.add(base.number)
+
+        description = parsed.description
+        for target in sorted(catalog.values(), key=lambda item: item.number):
+            if target.number == current_number or target.number in seen_targets:
+                continue
+
+            aliases = [target.title]
+            if target.title.startswith("The "):
+                aliases.append(target.title[4:])
+
+            matched = next(
+                (
+                    alias
+                    for alias in aliases
+                    if alias
+                    and re.search(
+                        rf"(?<![A-Za-z0-9]){re.escape(alias)}(?![A-Za-z0-9])",
+                        description,
+                    )
+                ),
+                None,
+            )
+            if matched is None:
+                continue
+
+            connections.append(
+                Connection(
+                    source_episode_number=current_number,
+                    target_episode=target,
+                    status="candidate",
+                    evidence_text=matched,
+                )
+            )
+            seen_targets.add(target.number)
 
         return KnowledgeUpdate(
             primary_entity=EntityIdentity(

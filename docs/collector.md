@@ -107,6 +107,18 @@ Reader Source annotations may link:
 - fuzzy matches → no
 - rejected matches → no
 
+Knowledge resolution may also surface an **exact canonical Episode title or a
+safe article-stripped alias** as a `candidate` when it appears in another
+Episode's source. This does not annotate Reader Source until reviewed.
+
+Example from Batch 011-020:
+
+```text
+018 // Phantom Port
+source mentions "Veiled Monolith"
+→ candidate connection to 014 // The Veiled Monolith
+```
+
 ## Relationship review memory
 
 The knowledge layer persists accepted and rejected decisions.
