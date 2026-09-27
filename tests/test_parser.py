@@ -81,3 +81,32 @@ def test_parser_extracts_standalone_structural_labels_without_interpreting_them(
     parsed = StructuralParser().parse(snapshot)
 
     assert parsed.structured_labels == ("[VISITOR'S PASS]",)
+
+
+def test_parser_extracts_record_and_log_labels_without_interpreting_them() -> None:
+    description = (
+        "Case Log V-04: residual fraction stabilized briefly.\n"
+        "Incident Record GR-09: the corridor failed.\n"
+        "Incident ND-037-11: the subject remained still.\n"
+        "A case log was mentioned without an identifier.\n"
+    )
+    snapshot = SourceSnapshot(
+        episode=EpisodeRef(number=98, video_id="vid098"),
+        title="098 // Afterlight",
+        description=description,
+        published=None,
+        duration_seconds=3600,
+        info={},
+        captions=(),
+        thumbnail=b"image",
+        thumbnail_ext="webp",
+        url="https://www.youtube.com/watch?v=vid098",
+    )
+
+    parsed = StructuralParser().parse(snapshot)
+
+    assert parsed.incident_labels == (
+        "Case Log V-04",
+        "Incident Record GR-09",
+        "Incident ND-037-11",
+    )

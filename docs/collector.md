@@ -95,7 +95,8 @@ Do not implement one giant regex.
 The StructuralParser may use targeted regexes internally for concrete syntax such as:
 
 - `OSF-053`
-- incident-log labels
+- record/log labels such as `Incident Log 07-B`, `Case Log V-04`,
+  `Incident Record GR-09`, and `Incident ND-037-11`
 - standalone structural labels such as `[VISITOR'S PASS]`
 - separators
 - known footer boundaries

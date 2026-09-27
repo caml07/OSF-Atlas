@@ -14,7 +14,10 @@ _EXPLICIT_OSF_REFERENCE = re.compile(
     r"OSF[-\s]?(?P<number>\d{3})"
     r")"
 )
-_INCIDENT_LABEL = re.compile(r"\bIncident Log\s+[A-Za-z0-9-]+\b", re.IGNORECASE)
+_INCIDENT_LABEL = re.compile(
+    r"\b(?:Incident Log|Incident Record|Case Log|Incident)\s+[A-Z0-9]+(?:-[A-Z0-9]+)+\b",
+    re.IGNORECASE,
+)
 _STRUCTURED_LABEL = re.compile(
     r"(?m)^\[[A-Z][A-Z0-9'’ -]{1,64}\][ \t]*$"
 )
