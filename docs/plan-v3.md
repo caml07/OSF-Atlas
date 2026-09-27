@@ -8,7 +8,8 @@ Progress:
 - Milestone 1 — parser project and TDD seams: **complete**
 - Representative parser/adaptor checks: **complete**
 - Batch 001–010: **complete**
-- Batch 011–020: pending
+- Batch 011–020: **complete**
+- Batch 021–030: pending
 
 ## Senior review
 

@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Veiled Monolith",
+      "status": "candidate",
+      "target_episode": 14,
+      "target_note": "OSF 014 - The Veiled Monolith"
+    }
+  ],
+  "episode": 18,
+  "episode_note": "OSF 018 - Phantom Port",
+  "primary_entity": "Phantom Port",
+  "updated_at": "2026-09-27T04:25:18.221362+00:00"
+}
