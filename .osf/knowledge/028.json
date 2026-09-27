@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Phantom Port",
+      "status": "candidate",
+      "target_episode": 18,
+      "target_note": "OSF 018 - Phantom Port"
+    }
+  ],
+  "episode": 28,
+  "episode_note": "OSF 028 - Obscura Highrise",
+  "primary_entity": "Obscura Highrise",
+  "updated_at": "2026-09-27T04:39:28.145625+00:00"
+}

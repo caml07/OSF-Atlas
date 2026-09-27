@@ -9,7 +9,8 @@ Progress:
 - Representative parser/adaptor checks: **complete**
 - Batch 001–010: **complete**
 - Batch 011–020: **complete**
-- Batch 021–030: pending
+- Batch 021–030: **complete**
+- Batch 031–040: pending
 
 ## Senior review
 
