@@ -1,7 +1,8 @@
 ---
 type: entity
 canonical_name: "Mourning Hall"
-entity_type: place
+entity_type: unknown
+review_status: unclassified
 aliases: []
 first_seen: 3
 tags: [osf, entity]
@@ -12,7 +13,7 @@ cssclasses: [osf-entity]
 
 ## Overview
 
-Primary location/entity associated with [[OSF 003 - Mourning Hall]].
+Primary subject associated with [[OSF 003 - Mourning Hall]].
 
 ## Evidence
 

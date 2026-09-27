@@ -24,6 +24,20 @@ views:
       - property: canonical_name
         direction: ASC
   - type: table
+    name: Unclassified
+    filters:
+      and:
+        - entity_type == "unknown"
+    order:
+      - canonical_name
+      - first_seen
+      - aliases
+    sort:
+      - property: first_seen
+        direction: ASC
+      - property: canonical_name
+        direction: ASC
+  - type: table
     name: Places
     filters:
       and:

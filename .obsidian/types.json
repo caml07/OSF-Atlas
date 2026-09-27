@@ -27,6 +27,7 @@
     "inferred_connections": "multitext",
     "canonical_name": "text",
     "entity_type": "text",
+    "review_status": "text",
     "first_seen": "number",
     "created": "datetime",
     "updated": "datetime",

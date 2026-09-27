@@ -45,7 +45,12 @@ class Renderer:
         (source_dir / "source.md").write_text(reader, encoding="utf-8")
 
         entity_name = knowledge.primary_entity.canonical_name
-        entity_path = self._root / "02 Entities" / "Places" / f"{entity_name}.md"
+        entity_path = (
+            self._root
+            / "02 Entities"
+            / "Unclassified"
+            / f"{entity_name}.md"
+        )
         entity_path.parent.mkdir(parents=True, exist_ok=True)
         self._upsert_entity(entity_path, entity_name, identity)
 
@@ -273,7 +278,8 @@ class Renderer:
             "---\n"
             "type: entity\n"
             f'canonical_name: "{safe_name}"\n'
-            "entity_type: place\n"
+            "entity_type: unknown\n"
+            "review_status: unclassified\n"
             "aliases: []\n"
             f"first_seen: {identity.number}\n"
             "tags: [osf, entity]\n"
@@ -281,7 +287,7 @@ class Renderer:
             "---\n\n"
             f"# {canonical_name}\n\n"
             "## Overview\n\n"
-            f"Primary location/entity associated with [[{identity.note_name}]].\n\n"
+            f"Primary subject associated with [[{identity.note_name}]]. Type is not inferred automatically.\n\n"
             "## Evidence\n\n"
             f"- Primary subject of [[{identity.note_name}]].\n\n"
             "## Appears In\n\n"

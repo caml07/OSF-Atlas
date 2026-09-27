@@ -1,7 +1,8 @@
 ---
 type: entity
 canonical_name: "Labyrinth of Reflections"
-entity_type: place
+entity_type: unknown
+review_status: unclassified
 aliases: []
 first_seen: 5
 tags: [osf, entity]
@@ -12,7 +13,7 @@ cssclasses: [osf-entity]
 
 ## Overview
 
-Primary location/entity associated with [[OSF 005 - Labyrinth of Reflections]].
+Primary subject associated with [[OSF 005 - Labyrinth of Reflections]].
 
 ## Evidence
 

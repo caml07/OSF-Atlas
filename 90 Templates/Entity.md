@@ -2,6 +2,7 @@
 type: entity
 canonical_name:
 entity_type:
+review_status: unclassified
 aliases: []
 first_seen:
 tags:

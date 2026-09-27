@@ -19,7 +19,7 @@ from osf_atlas.renderer import Renderer
 def test_renderer_rebuild_preserves_human_owned_state_and_notes(tmp_path: Path) -> None:
     vault = tmp_path
     (vault / "01 Episodes").mkdir()
-    (vault / "02 Entities" / "Places").mkdir(parents=True)
+    (vault / "02 Entities" / "Unclassified").mkdir(parents=True)
     (vault / "05 Sources" / "114").mkdir(parents=True)
     (vault / "06 Assets" / "Thumbnails").mkdir(parents=True)
 
@@ -108,11 +108,19 @@ This place feels tied to the bigger network.
     ).read_text(encoding="utf-8")
     assert "[[The Veiled Monolith: Interior]]" in rendered
     assert "[[OSF 053 - Terminal]]" in rendered
+    entity = (
+        vault
+        / "02 Entities"
+        / "Unclassified"
+        / "The Veiled Monolith: Interior.md"
+    ).read_text(encoding="utf-8")
+    assert "entity_type: unknown" in entity
+    assert "review_status: unclassified" in entity
 
 
 def test_renderer_keeps_empty_human_properties_and_reader_markdown_clean(tmp_path: Path) -> None:
     (tmp_path / "01 Episodes").mkdir()
-    (tmp_path / "02 Entities" / "Places").mkdir(parents=True)
+    (tmp_path / "02 Entities" / "Unclassified").mkdir(parents=True)
     (tmp_path / "05 Sources" / "001").mkdir(parents=True)
 
     snapshot = SourceSnapshot(
@@ -152,7 +160,7 @@ def test_renderer_keeps_empty_human_properties_and_reader_markdown_clean(tmp_pat
 
 def test_renderer_shows_candidate_without_annotating_reader_source(tmp_path: Path) -> None:
     (tmp_path / "01 Episodes").mkdir()
-    (tmp_path / "02 Entities" / "Places").mkdir(parents=True)
+    (tmp_path / "02 Entities" / "Unclassified").mkdir(parents=True)
     (tmp_path / "05 Sources" / "018").mkdir(parents=True)
 
     description = "Like the legendary Veiled Monolith, the port hides in mist."
