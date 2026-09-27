@@ -12,7 +12,8 @@ Progress:
 - Batch 021–030: **complete**
 - Discovery model / ELI5 README: **complete**
 - Public-safe GitHub main: **complete**
-- Batch 031–040: **paused pending human semantic review**
+- Batch 031–040: **complete**
+- Batch 041–050: pending
 
 ## Senior review
 

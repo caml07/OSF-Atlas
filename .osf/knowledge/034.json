@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Ethereal Starfield",
+      "status": "candidate",
+      "target_episode": 10,
+      "target_note": "OSF 010 - Ethereal Starfield"
+    }
+  ],
+  "episode": 34,
+  "episode_note": "OSF 034 - Portal Overwatch",
+  "primary_entity": "Portal Overwatch",
+  "updated_at": "2026-09-27T06:32:19.869337+00:00"
+}

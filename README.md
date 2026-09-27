@@ -576,19 +576,20 @@ For example, Batch 011–020 taught the resolver to surface exact canonical-name
 
 ## Current progress
 
-Corpus ingestion is intentionally paused while this knowledge model is reviewed.
+Corpus ingestion continues under the human-owned semantic model described above.
 
 ```text
 001–010  complete
 011–020  complete
 021–030  complete
-031–125  paused
+031–040  complete
+041–125  pending
 ```
 
 Current automated gates:
 
 ```text
-30/30 ingested Episodes validate
+40/40 ingested Episodes validate
 10/10 tests pass
 0 failed extractions
 ```
