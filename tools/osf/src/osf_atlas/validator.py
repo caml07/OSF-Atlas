@@ -19,7 +19,7 @@ class Validator:
         description_path = revision_dir / "description.txt"
         if not description_path.exists():
             errors.append("description.txt")
-        elif description_path.read_text(encoding="utf-8") != snapshot.description:
+        elif description_path.read_bytes() != snapshot.description.encode("utf-8"):
             errors.append("description.txt:mismatch")
 
         thumbnail_path = revision_dir / f"thumbnail.{snapshot.thumbnail_ext}"
@@ -34,7 +34,7 @@ class Validator:
             if not path.exists():
                 errors.append(name)
                 continue
-            if path.read_text(encoding="utf-8") != caption.content:
+            if path.read_bytes() != caption.content.encode("utf-8"):
                 errors.append(f"{name}:mismatch")
 
         return ValidationReport(ok=not errors, errors=tuple(errors))

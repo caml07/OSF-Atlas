@@ -82,6 +82,12 @@ Validator compares reported source availability with the files/manifests
 actually produced, so a missing requested caption track becomes a failed or
 explicitly unavailable result rather than a silent success.
 
+Text artifacts are validated as exact UTF-8 bytes rather than through Python's
+universal-newline text decoding. This matters because upstream descriptions or
+captions can legitimately contain mixed `\r\n` / `\n` line endings. A
+successful retry moves prior active failure records into
+`.osf/failures/resolved/` instead of deleting the diagnostic history.
+
 ## Parsing
 
 Do not implement one giant regex.

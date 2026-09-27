@@ -51,6 +51,7 @@ class SourceArchive:
         existing = self._find_fingerprint(revisions_dir, fingerprint)
         if existing is not None:
             thumbnail_name = self._publish_current_thumbnail(snapshot, existing)
+            self._resolve_failure_records(snapshot.episode.number)
             return ArchivedRevision(
                 revision_name=existing.name,
                 revision_dir=existing,
@@ -92,6 +93,7 @@ class SourceArchive:
             destination = revisions_dir / revision_name
             staging.replace(destination)
             thumbnail_name = self._publish_current_thumbnail(snapshot, destination)
+            self._resolve_failure_records(snapshot.episode.number)
             return ArchivedRevision(
                 revision_name=revision_name,
                 revision_dir=destination,
@@ -233,3 +235,22 @@ class SourceArchive:
             json.dumps(payload, ensure_ascii=False, indent=2, sort_keys=True) + "\n",
             encoding="utf-8",
         )
+
+    def _resolve_failure_records(self, number: int) -> None:
+        failure_dir = self._root / ".osf" / "failures"
+        if not failure_dir.exists():
+            return
+
+        records = sorted(failure_dir.glob(f"*-{number:03d}.json"))
+        if not records:
+            return
+
+        resolved_dir = failure_dir / "resolved"
+        resolved_dir.mkdir(parents=True, exist_ok=True)
+        for record in records:
+            destination = resolved_dir / record.name
+            counter = 1
+            while destination.exists():
+                destination = resolved_dir / f"{record.stem}_{counter:02d}{record.suffix}"
+                counter += 1
+            record.replace(destination)
