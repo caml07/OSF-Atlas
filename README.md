@@ -118,7 +118,34 @@ entity_type: unknown
 review_status: unclassified
 ```
 
-Later, evidence or human review can classify them.
+The machine does **not** promote that Entity into a semantic type later just because more corpus text was ingested. Classification happens when **you read the material and make the call**.
+
+For example, while reading you might say:
+
+> "They keep talking about this thing called Argus. It sounds like an AI/system."
+
+That is the moment the Entity can move from:
+
+```text
+02 Entities/Unclassified/Argus.md
+```
+
+to something like:
+
+```text
+02 Entities/Systems/Argus.md
+```
+
+and its properties can become:
+
+```yaml
+entity_type: system
+review_status: human-reviewed
+```
+
+The important distinction is that **Argus never stops being an Entity**. `System` is its human-reviewed classification, not a different domain object. The same applies to `Place`, `Person`, `Organization`, and `Phenomenon`.
+
+If the source is still unclear, there is no pressure to classify it. `unknown` is a valid state for as long as necessary.
 
 This distinction becomes useful when another Episode mentions the same thing:
 
@@ -128,6 +155,114 @@ OSF 018 ─────► Phantom Port ◄───── OSF 028
 ```
 
 Now the graph can represent *what* connects the Episodes instead of merely drawing a mysterious line between two video numbers.
+
+## The human discovery contract
+
+This is the central rule of OSF Atlas.
+
+**Ingestion discovers material. You discover meaning.**
+
+The system may prepare an Episode, preserve its source, create an unclassified primary Entity, and surface small deterministic clues. It must stop before semantic interpretation becomes authoritative.
+
+A normal discovery session should feel closer to this:
+
+```text
+You open OSF 029.
+        │
+        ▼
+You listen / look at the artwork / read the source.
+        │
+        ▼
+"Wait, who or what is Argus?"
+        │
+        ▼
+You notice the text describes Argus like an AI.
+        │
+        ▼
+You tell the agent:
+"Argus seems to be a system / AI."
+        │
+        ▼
+The agent records the Entity classification + evidence.
+        │
+        ▼
+Later you find Argus somewhere else.
+        │
+        ▼
+"OHH, this connects back to 029."
+        │
+        ▼
+A reviewed Connection is recorded.
+        │
+        ▼
+After several discoveries:
+"These connections look like one larger thread."
+        │
+        ▼
+You create / name a Lore Thread.
+```
+
+The agent is there to keep the notebook organized while you do the discovering.
+
+### What happens when I say something?
+
+| What you notice while reading | What the Atlas should do | What it must **not** do |
+| --- | --- | --- |
+| "This thing has a name." | Create or link an Entity if it has independent identity. | Invent a semantic type. |
+| "This seems like a place." | Classify the Entity as `place`, record that this was human-reviewed, and move it to `Places/`. | Pretend the source explicitly called it a place if it did not. |
+| "This sounds like an AI/system." | Classify it as `system` with the relevant evidence/reading context. | Generate extra capabilities or backstory. |
+| "They mention X here." | Link the mention/evidence and surface the existing Entity/Episode. | Claim the mention proves a larger relationship. |
+| "This seems connected to X." | Record an `inferred` Connection with your reasoning/evidence. | Promote it to `confirmed`. |
+| "The source literally says this is X / points to OSF-053." | Record a `confirmed` Connection with the exact evidence. | Replace the Raw Source with an annotated version. |
+| "Nah, I don't think these are connected." | Mark the candidate `rejected` and keep the decision. | Delete the history and ask again next rebuild. |
+| "Wait, later lore makes that rejected idea make sense." | `reopen` the decision for review. | Erase the earlier rejection. |
+| "These discoveries are all part of the same thing." | Start or extend a Lore Thread. | Auto-generate a storyline before you make that connection. |
+| "I think X means Y." | Save it as your note/theory and link relevant nodes. | Present your theory as OSF canon. |
+
+### Classification belongs to the reader
+
+There is deliberately no automatic pipeline like:
+
+```text
+Entity → LLM guesses type → Place/System/Person
+```
+
+The intended pipeline is:
+
+```text
+Entity: unknown
+      │
+      │ you read the Episode
+      ▼
+"this seems like a place"
+      │
+      │ human-reviewed classification
+      ▼
+Entity: place
+```
+
+This matters because names in OSF can be ambiguous. A title that sounds like a building could be a machine, a project, an event, or something stranger. Keeping it `unknown` costs almost nothing; confidently classifying it wrong pollutes the graph.
+
+### Connections belong to evidence + interpretation
+
+Classification and connection are separate decisions.
+
+You may discover:
+
+```text
+Entity A = place
+Entity B = system
+```
+
+without knowing whether they are related.
+
+Later, while reading, you may say:
+
+> "This place seems to be controlled by that system from the other Episode."
+
+If that is your interpretation rather than an explicit statement, the Atlas records an **Inferred Connection** and keeps your reasoning beside it. If the source explicitly establishes the relationship, it can become **Confirmed**.
+
+The graph therefore records not only *what connects*, but also **why we believe it connects**.
 
 ## Connections: how sure are we?
 
@@ -259,6 +394,59 @@ It can contain:
 - open questions;
 - your notes.
 
+### A Lore Thread is something *you notice*
+
+The Atlas should never create a Lore Thread merely because several nodes are mathematically close in the Obsidian Graph. A dense cluster can be a useful hint, but it is not a story by itself.
+
+A thread begins when your reading reaches a moment like:
+
+> "Hold on. The thing from 014 gets mentioned in 018, Phantom Port gets mentioned again in 028, and what I just read changes how I understand those earlier Episodes. I want to follow this."
+
+At that point the thread can preserve the path you took:
+
+```text
+first clue
+   ↓
+what I thought at the time
+   ↓
+second clue
+   ↓
+connection I accepted / inferred / rejected
+   ↓
+new evidence from a later Episode
+   ↓
+what changed in my understanding
+```
+
+That makes a Lore Thread useful even if your interpretation changes later. It is a record of discovery, not a frozen encyclopedia answer.
+
+### Example: the first tiny chain we found
+
+So far the parser has surfaced this review path:
+
+```text
+014 // The Veiled Monolith
+          ▲
+          │ candidate mention
+018 // Phantom Port
+          ▲
+          │ candidate mention
+028 // Obscura Highrise
+```
+
+What does that mean? Very little **so far**.
+
+It means 018 contains the name `Veiled Monolith`, and 028 contains the name `Phantom Port`. That is enough to put two cards on the investigation board. It is not enough to write a Lore Thread claiming that all three share one plot.
+
+When you eventually read them, you may decide:
+
+- the mentions are important and form part of a larger thread;
+- one is important and the other is incidental;
+- both are merely references;
+- a later Episode completely changes the interpretation.
+
+The vault is designed to preserve whichever path the evidence and your reading actually support.
+
 ## Where my notes fit
 
 Your notes are a separate layer.
@@ -282,6 +470,34 @@ your notes / theories ─────────┘
 ```
 
 Both can live in the same graph without pretending they have the same authority.
+
+### What the agentic skill is for
+
+The `osf-vault` skill is the bridge between casual discovery and structured notes. You should be able to talk to it naturally instead of filling forms.
+
+Examples:
+
+> "I think this Argus thing is an AI or some kind of system."
+
+Expected behavior: find/create `Argus`, classify it only because **you just made that reading judgment**, link the Episode/evidence, preserve your wording where useful, and leave unrelated lore untouched.
+
+> "This place reminds me of Phantom Port, but I'm not sure they're actually connected."
+
+Expected behavior: preserve the observation as a theory/candidate-style research note. Do not manufacture a confirmed relationship.
+
+> "Yeah, after reading this, I'm convinced this connects to Phantom Port because of X."
+
+Expected behavior: record an inferred connection with your reasoning unless the source itself explicitly establishes it.
+
+> "This literally says Terminal (OSF-053)."
+
+Expected behavior: attach the explicit evidence and allow a confirmed connection.
+
+> "These three things feel like the same storyline. Let's call it ___ for now."
+
+Expected behavior: create an emerging Lore Thread containing the discoveries you selected, their evidence states, and your open questions.
+
+The skill should organize **your research process**. It should not impersonate a lore expert.
 
 ## The layers
 
