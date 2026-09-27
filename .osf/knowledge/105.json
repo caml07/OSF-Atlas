@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Stargaze Citadel (OSF-036)",
+      "status": "confirmed",
+      "target_episode": 36,
+      "target_note": "OSF 036 - Stargaze Citadel"
+    }
+  ],
+  "episode": 105,
+  "episode_note": "OSF 105 - Lone Star",
+  "primary_entity": "Lone Star",
+  "updated_at": "2026-09-27T16:11:25.404511+00:00"
+}

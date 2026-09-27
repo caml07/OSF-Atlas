@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "The Gradient (OSF-097)",
+      "status": "confirmed",
+      "target_episode": 97,
+      "target_note": "OSF 097 - The Gradient"
+    }
+  ],
+  "episode": 107,
+  "episode_note": "OSF 107 - Chroma Horizon",
+  "primary_entity": "Chroma Horizon",
+  "updated_at": "2026-09-27T16:11:31.374130+00:00"
+}

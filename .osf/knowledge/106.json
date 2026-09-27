@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Radiant Pools (OSF-049)",
+      "status": "confirmed",
+      "target_episode": 49,
+      "target_note": "OSF 049 - Radiant Pools"
+    }
+  ],
+  "episode": 106,
+  "episode_note": "OSF 106 - Blue Meridian",
+  "primary_entity": "Blue Meridian",
+  "updated_at": "2026-09-27T16:11:28.283601+00:00"
+}

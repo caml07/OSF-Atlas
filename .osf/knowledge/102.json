@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Reservoir Zero (OSF-040)",
+      "status": "confirmed",
+      "target_episode": 40,
+      "target_note": "OSF 040 - Reservoir Zero"
+    }
+  ],
+  "episode": 102,
+  "episode_note": "OSF 102 - Oculus Fall",
+  "primary_entity": "Oculus Fall",
+  "updated_at": "2026-09-27T16:11:14.175826+00:00"
+}

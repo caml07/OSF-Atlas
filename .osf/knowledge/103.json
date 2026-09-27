@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "The Mourning Hall (OSF-003)",
+      "status": "confirmed",
+      "target_episode": 3,
+      "target_note": "OSF 003 - Mourning Hall"
+    }
+  ],
+  "episode": 103,
+  "episode_note": "OSF 103 - Valhalla",
+  "primary_entity": "Valhalla",
+  "updated_at": "2026-09-27T16:11:19.037595+00:00"
+}

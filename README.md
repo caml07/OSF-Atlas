@@ -589,13 +589,14 @@ Corpus ingestion continues under the human-owned semantic model described above.
 071–080  complete
 081–090  complete
 091–100  complete
-101–125  pending
+101–110  complete
+111–125  pending
 ```
 
 Current automated gates:
 
 ```text
-100/100 ingested Episodes validate
+110/110 ingested Episodes validate
 14/14 tests pass
 0 failed extractions
 ```

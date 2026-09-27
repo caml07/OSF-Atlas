@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Glimmering Archive (OSF-027)",
+      "status": "confirmed",
+      "target_episode": 27,
+      "target_note": "OSF 027 - Glimmering Archive"
+    }
+  ],
+  "episode": 104,
+  "episode_note": "OSF 104 - Lumen Return",
+  "primary_entity": "Lumen Return",
+  "updated_at": "2026-09-27T16:11:21.715195+00:00"
+}
