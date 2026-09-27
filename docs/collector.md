@@ -1,6 +1,6 @@
 # Collector and Parser
 
-Status: planning reference
+Status: implemented v1; corpus ingestion in progress
 
 ## Purpose
 
@@ -27,32 +27,26 @@ fetch
 → validate
 ```
 
-## Diagnostic commands
+## Commands
 
-Lower-level commands remain available for debugging and maintenance:
+The implemented CLI currently exposes:
 
 ```bash
-osf fetch 001
-osf fetch 001-010
-
-osf build 001
-osf build 001-010
-osf build --all
-
+osf ingest 001-010
 osf check 001
 osf check 001-010
-
-osf review
 osf status
+osf catalog
 ```
 
-Exact CLI spelling is still provisional until implementation.
+Lower-level `fetch/build/review` commands remain future extensions; the v1 CLI
+keeps the normal interface intentionally small.
 
 ## Acquisition
 
-Planned implementation language: Python.
+Implementation language: Python.
 
-Planned acquisition adapter: `yt-dlp` CLI, not deep coupling to yt-dlp internals.
+Acquisition adapter: `yt-dlp` CLI, not deep coupling to yt-dlp internals.
 
 For each Episode retrieve without downloading video/audio:
 
@@ -67,8 +61,10 @@ For each Episode retrieve without downloading video/audio:
 
 Do not archive auto-translated subtitle tracks.
 
-The acquisition adapter records what subtitle/caption tracks yt-dlp reports as
-available before requesting files.
+Manual English tracks are preserved when exposed by `subtitles`. Automatic
+English captions are accepted only when YouTube/yt-dlp exposes an English
+original track (`en-orig`) or metadata establishes English as the original
+language. Auto-translated tracks are not archived.
 
 ## Staging and failure
 
@@ -153,4 +149,13 @@ Representative fixtures should include at minimum:
 - `114`-style explicit numbered cross-reference;
 - an Episode with original captions, if such an Episode exists.
 
-The first formal corpus batch remains 001-010 after parser fixtures prove the architecture.
+The representative checks now cover:
+
+- early/simple source and exact description preservation;
+- synthetic manual + automatic English caption handling;
+- exact colon-title variants such as `Silent Arbiter: Interior Hall` → `Silent Arbiter`;
+- `090 // The Between` with no captions and `Incident Log 07-B`;
+- `114 // The Veiled Monolith: Interior` with explicit parenthetical references
+  to `OSF-014` and `OSF-053`.
+
+The first formal corpus batch `001-010` passed its ingestion gate.
