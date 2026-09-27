@@ -20,7 +20,8 @@ Progress:
 - Batch 081–090: **complete**
 - Batch 091–100: **complete**
 - Batch 101–110: **complete**
-- Batch 111–120: pending
+- Batch 111–125: **complete**
+- Final 001–125 consistency/lore-link sweep: **complete**
 
 ## Senior review
 

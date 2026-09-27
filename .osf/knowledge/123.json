@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Aeolian Arc (OSF-081)",
+      "status": "confirmed",
+      "target_episode": 81,
+      "target_note": "OSF 081 - Aeolian Arc"
+    }
+  ],
+  "episode": 123,
+  "episode_note": "OSF 123 - Tether",
+  "primary_entity": "Tether",
+  "updated_at": "2026-09-27T16:14:47.454359+00:00"
+}

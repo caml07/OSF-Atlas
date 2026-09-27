@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Terminal (OSF-053)",
+      "status": "confirmed",
+      "target_episode": 53,
+      "target_note": "OSF 053 - Terminal"
+    }
+  ],
+  "episode": 112,
+  "episode_note": "OSF 112 - Evenfall",
+  "primary_entity": "Evenfall",
+  "updated_at": "2026-09-27T16:14:14.986152+00:00"
+}
