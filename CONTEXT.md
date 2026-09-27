@@ -29,11 +29,11 @@ The Markdown note used for reading an Episode inside Obsidian. It presents sourc
 _Avoid_: Raw Source
 
 **Entity**:
-A recurring named thing in OSF lore, such as a place, organization, system, phenomenon, or person, that deserves its own graph node.
+A named thing with independent identity inside OSF lore, such as a place, organization, system, phenomenon, or person, that deserves its own graph node. A primary Episode subject may be seeded as an unclassified Entity, but its semantic type must not be guessed automatically.
 _Avoid_: Tag when the concept has independent lore identity
 
 **Lore Thread**:
-A recurring narrative relationship spanning multiple Episodes or Entities.
+A research trail representing a recurring narrative relationship discovered across multiple Episodes or Entities. It should emerge from reviewed evidence/connections rather than being generated as an authoritative storyline in advance.
 _Avoid_: Category, topic
 
 **Confirmed Connection**:
@@ -41,7 +41,7 @@ A relationship between Episodes or Entities explicitly supported by OSF source m
 _Avoid_: Theory
 
 **Candidate Connection**:
-A machine-detected relationship that has not yet been accepted as either Confirmed or Inferred.
+A concrete machine-detected clue worth reviewing that has not yet been accepted as either Confirmed or Inferred. Exact canonical Episode-name mentions may become candidates; fuzzy semantic similarity must not.
 _Avoid_: Confirmed Connection
 
 **Connection Decision**:

@@ -14,8 +14,10 @@
 .osf/cache/
 .osf/tmp/
 
-# Raw source revisions and downloaded thumbnails are preserved locally
-# outside Git to avoid duplicating binary/archive history.
+# Upstream OSF source material and downloaded thumbnails are preserved locally.
+# The public Git repository contains the Atlas/tooling, not a redistribution
+# mirror of complete OSF descriptions, captions, or artwork.
+05 Sources/*/source.md
 05 Sources/*/revisions/
 06 Assets/Thumbnails/*
 !06 Assets/Thumbnails/.gitkeep

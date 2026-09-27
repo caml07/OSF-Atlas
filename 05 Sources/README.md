@@ -1,8 +1,8 @@
 # Sources
 
-Generated per-Episode source material lives here.
+Generated per-Episode source material lives here **locally**.
 
-Planned shape:
+Current shape:
 
 ```text
 05 Sources/
@@ -18,7 +18,8 @@ Planned shape:
             └── hashes.json
 ```
 
-- `source.md` is the Obsidian Reader Source.
+- `source.md` is the generated Obsidian Reader Source.
 - `revisions/` contains immutable local Raw Source snapshots.
-- Raw revisions are intentionally excluded from Git because they maintain their own collector-level history.
+- `source.md` and `revisions/` are intentionally excluded from the public Git repository because they can contain complete upstream OSF descriptions or captions.
+- The collector regenerates Reader Source from the preserved local revision.
 - No video or audio belongs here.
