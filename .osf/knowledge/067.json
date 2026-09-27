@@ -1,0 +1,20 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Veiled Monolith",
+      "status": "candidate",
+      "target_episode": 14,
+      "target_note": "OSF 014 - The Veiled Monolith"
+    },
+    {
+      "evidence_text": "Phantom Port",
+      "status": "candidate",
+      "target_episode": 18,
+      "target_note": "OSF 018 - Phantom Port"
+    }
+  ],
+  "episode": 67,
+  "episode_note": "OSF 067 - Cloak Array",
+  "primary_entity": "Cloak Array",
+  "updated_at": "2026-09-27T06:56:26.036989+00:00"
+}

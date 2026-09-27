@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Seraphim Institute (OSF-004)",
+      "status": "confirmed",
+      "target_episode": 4,
+      "target_note": "OSF 004 - Seraphim Institute"
+    }
+  ],
+  "episode": 65,
+  "episode_note": "OSF 065 - Harmony Passage",
+  "primary_entity": "Harmony Passage",
+  "updated_at": "2026-09-27T06:56:20.915630+00:00"
+}

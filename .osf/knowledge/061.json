@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "The Redeemer (OSF-011)",
+      "status": "confirmed",
+      "target_episode": 11,
+      "target_note": "OSF 011 - Redeemer"
+    }
+  ],
+  "episode": 61,
+  "episode_note": "OSF 061 - Signal",
+  "primary_entity": "Signal",
+  "updated_at": "2026-09-27T06:56:10.524505+00:00"
+}

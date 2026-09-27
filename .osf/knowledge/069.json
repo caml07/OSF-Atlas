@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "The Tribute (OSF-006)",
+      "status": "confirmed",
+      "target_episode": 6,
+      "target_note": "OSF 006 - Tribute"
+    }
+  ],
+  "episode": 69,
+  "episode_note": "OSF 069 - Final Shore",
+  "primary_entity": "Final Shore",
+  "updated_at": "2026-09-27T06:56:31.294221+00:00"
+}
