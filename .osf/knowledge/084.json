@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Inside Snow Angler (OSF-025)",
+      "status": "confirmed",
+      "target_episode": 25,
+      "target_note": "OSF 025 - Snow Angler"
+    }
+  ],
+  "episode": 84,
+  "episode_note": "OSF 084 - Snow Angler Interior",
+  "primary_entity": "Snow Angler: Interior",
+  "updated_at": "2026-09-27T15:55:21.856268+00:00"
+}
