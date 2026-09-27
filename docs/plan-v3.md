@@ -5,8 +5,10 @@ Status: approved implementation plan
 Progress:
 
 - Milestone 0 — vault scaffold: **complete**
-- Milestone 1 — parser project and TDD seams: pending
-- Corpus ingestion: not started
+- Milestone 1 — parser project and TDD seams: **complete**
+- Representative parser/adaptor checks: **complete**
+- Batch 001–010: **complete**
+- Batch 011–020: pending
 
 ## Senior review
 
