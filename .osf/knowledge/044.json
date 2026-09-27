@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Nexus of Realms",
+      "status": "candidate",
+      "target_episode": 9,
+      "target_note": "OSF 009 - Nexus of Realms"
+    }
+  ],
+  "episode": 44,
+  "episode_note": "OSF 044 - ChronoFlutter",
+  "primary_entity": "ChronoFlutter",
+  "updated_at": "2026-09-27T06:40:41.403734+00:00"
+}

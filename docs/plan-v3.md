@@ -13,7 +13,8 @@ Progress:
 - Discovery model / ELI5 README: **complete**
 - Public-safe GitHub main: **complete**
 - Batch 031–040: **complete**
-- Batch 041–050: pending
+- Batch 041–050: **complete**
+- Batch 051–060: pending
 
 ## Senior review
 

@@ -1,0 +1,20 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Veiled Monolith",
+      "status": "candidate",
+      "target_episode": 14,
+      "target_note": "OSF 014 - The Veiled Monolith"
+    },
+    {
+      "evidence_text": "Phantom Port",
+      "status": "candidate",
+      "target_episode": 18,
+      "target_note": "OSF 018 - Phantom Port"
+    }
+  ],
+  "episode": 42,
+  "episode_note": "OSF 042 - Monolith's Tail",
+  "primary_entity": "Monolith's Tail",
+  "updated_at": "2026-09-27T06:40:35.556148+00:00"
+}

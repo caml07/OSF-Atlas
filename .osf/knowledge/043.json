@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "title-variant: Silent Arbiter",
+      "status": "confirmed",
+      "target_episode": 16,
+      "target_note": "OSF 016 - Silent Arbiter"
+    }
+  ],
+  "episode": 43,
+  "episode_note": "OSF 043 - Silent Arbiter Interior Hall",
+  "primary_entity": "Silent Arbiter: Interior Hall",
+  "updated_at": "2026-09-27T06:40:38.552977+00:00"
+}
