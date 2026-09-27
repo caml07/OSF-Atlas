@@ -1,0 +1,20 @@
+{
+  "connections": [
+    {
+      "evidence_text": "title-variant: Obscura Highrise",
+      "status": "confirmed",
+      "target_episode": 28,
+      "target_note": "OSF 028 - Obscura Highrise"
+    },
+    {
+      "evidence_text": "Phantom Port",
+      "status": "candidate",
+      "target_episode": 18,
+      "target_note": "OSF 018 - Phantom Port"
+    }
+  ],
+  "episode": 96,
+  "episode_note": "OSF 096 - Obscura Highrise Revived",
+  "primary_entity": "Obscura Highrise: Revived",
+  "updated_at": "2026-09-27T16:07:07.074105+00:00"
+}

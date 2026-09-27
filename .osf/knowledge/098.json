@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Night Piercer (OSF-037)",
+      "status": "confirmed",
+      "target_episode": 37,
+      "target_note": "OSF 037 - Night Piercer"
+    }
+  ],
+  "episode": 98,
+  "episode_note": "OSF 098 - Afterlight",
+  "primary_entity": "Afterlight",
+  "updated_at": "2026-09-27T16:07:13.128181+00:00"
+}
