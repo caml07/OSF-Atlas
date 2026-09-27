@@ -105,6 +105,7 @@ class Renderer:
                 f"[[{connection.target_episode.note_name}|{connection.evidence_text}]]"
             )
             description = description.replace(connection.evidence_text, replacement)
+        description = "\n".join(line.rstrip() for line in description.splitlines())
 
         manual = [c for c in parsed.snapshot.captions if c.kind == "manual"]
         automatic = [c for c in parsed.snapshot.captions if c.kind == "automatic"]
@@ -178,10 +179,10 @@ class Renderer:
             "lore_review_status: pending",
             "schema_version: 1",
             "parser_version: 1",
-            f"favorite: {human_lines['favorite']}",
-            f"rating: {human_lines['rating']}",
-            f"status: {human_lines['status']}",
-            f"last_read: {human_lines['last_read']}",
+            self._human_frontmatter_line("favorite", human_lines["favorite"]),
+            self._human_frontmatter_line("rating", human_lines["rating"]),
+            self._human_frontmatter_line("status", human_lines["status"]),
+            self._human_frontmatter_line("last_read", human_lines["last_read"]),
             f'entities: ["[[{entity}]]"]',
             "confirmed_connections: ["
             + ", ".join(f'"[[{name}]]"' for name in confirmed)
@@ -228,6 +229,9 @@ class Renderer:
             + human_notes
             + "\n\n<!-- OSF:HUMAN:END -->\n"
         )
+
+    def _human_frontmatter_line(self, key: str, value: str) -> str:
+        return f"{key}: {value}" if value else f"{key}:"
 
     def _upsert_entity(
         self,

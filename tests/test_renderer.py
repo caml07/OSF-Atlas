@@ -108,3 +108,43 @@ This place feels tied to the bigger network.
     ).read_text(encoding="utf-8")
     assert "[[The Veiled Monolith: Interior]]" in rendered
     assert "[[OSF 053 - Terminal]]" in rendered
+
+
+def test_renderer_keeps_empty_human_properties_and_reader_markdown_clean(tmp_path: Path) -> None:
+    (tmp_path / "01 Episodes").mkdir()
+    (tmp_path / "02 Entities" / "Places").mkdir(parents=True)
+    (tmp_path / "05 Sources" / "001").mkdir(parents=True)
+
+    snapshot = SourceSnapshot(
+        episode=EpisodeRef(number=1, video_id="vid001"),
+        title="001 // Iron Haven - Ambient",
+        description="line with transport spaces   \nnext line\n",
+        published=None,
+        duration_seconds=3600,
+        info={},
+        captions=(),
+        thumbnail=b"image",
+        thumbnail_ext="webp",
+        url="https://www.youtube.com/watch?v=vid001",
+    )
+    parsed = ParsedSource(snapshot, snapshot.description, (), ())
+    identity = EpisodeIdentity(1, "Iron Haven", "vid001", "OSF 001 - Iron Haven")
+    knowledge = KnowledgeUpdate(EntityIdentity("Iron Haven", 1), ())
+
+    Renderer(tmp_path).render_episode(
+        identity=identity,
+        parsed=parsed,
+        knowledge=knowledge,
+        source_revision="2026-09-27_00-00-00Z",
+        thumbnail_name="001.webp",
+    )
+
+    episode = (tmp_path / "01 Episodes" / "OSF 001 - Iron Haven.md").read_text()
+    reader = (tmp_path / "05 Sources" / "001" / "source.md").read_text()
+
+    assert "rating:\n" in episode
+    assert "rating: \n" not in episode
+    assert "last_read:\n" in episode
+    assert "last_read: \n" not in episode
+    assert "line with transport spaces\n" in reader
+    assert "line with transport spaces   \n" not in reader
