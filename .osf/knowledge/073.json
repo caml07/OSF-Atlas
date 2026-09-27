@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Realms (OSF-009)",
+      "status": "confirmed",
+      "target_episode": 9,
+      "target_note": "OSF 009 - Nexus of Realms"
+    }
+  ],
+  "episode": 73,
+  "episode_note": "OSF 073 - Nexus of Realms Courtyard",
+  "primary_entity": "Nexus of Realms: Courtyard",
+  "updated_at": "2026-09-27T15:42:47.142984+00:00"
+}

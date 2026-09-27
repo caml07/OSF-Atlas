@@ -16,7 +16,8 @@ Progress:
 - Batch 041–050: **complete**
 - Batch 051–060: **complete**
 - Batch 061–070: **complete**
-- Batch 071–080: pending
+- Batch 071–080: **complete**
+- Batch 081–090: pending
 
 ## Senior review
 

@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "title-variant: Terminal",
+      "status": "confirmed",
+      "target_episode": 53,
+      "target_note": "OSF 053 - Terminal"
+    }
+  ],
+  "episode": 76,
+  "episode_note": "OSF 076 - Terminal Dustfall",
+  "primary_entity": "Terminal: Dustfall",
+  "updated_at": "2026-09-27T15:42:55.924028+00:00"
+}
