@@ -1,80 +1,75 @@
 filters:
   and:
     - file.inFolder("01 Episodes")
-    - 'type == "episode"'
-
+    - type == "episode"
 properties:
   note.osf_number:
     displayName: "OSF #"
   note.ingestion_status:
-    displayName: "Ingestion"
+    displayName: Ingestion
   note.source_status:
-    displayName: "Source"
+    displayName: Source
   note.source_revision:
-    displayName: "Current revision"
+    displayName: Current revision
   note.schema_version:
-    displayName: "Schema"
+    displayName: Schema
   note.parser_version:
-    displayName: "Parser"
-
+    displayName: Parser
 views:
   - type: table
-    name: "Failures"
+    name: Failures
     filters:
       and:
-        - 'ingestion_status == "failed"'
+        - ingestion_status == "failed"
     order:
-      - note.osf_number
+      - osf_number
       - file.name
-      - note.ingestion_status
-      - note.source_status
-      - note.source_revision
+      - ingestion_status
+      - source_status
+      - source_revision
     sort:
-      - property: note.osf_number
+      - property: osf_number
         direction: ASC
-
   - type: table
-    name: "Pending"
+    name: Pending
     filters:
       and:
-        - 'ingestion_status != "complete"'
-        - 'ingestion_status != "failed"'
+        - ingestion_status != "complete"
+        - ingestion_status != "failed"
     order:
-      - note.osf_number
+      - osf_number
       - file.name
-      - note.ingestion_status
-      - note.source_status
-      - note.source_revision
+      - ingestion_status
+      - source_status
+      - source_revision
     sort:
-      - property: note.osf_number
+      - property: osf_number
         direction: ASC
-
   - type: table
-    name: "Complete"
+    name: Complete
     filters:
       and:
-        - 'ingestion_status == "complete"'
+        - ingestion_status == "complete"
     order:
-      - note.osf_number
+      - osf_number
       - file.name
-      - note.source_status
-      - note.source_revision
-      - note.schema_version
-      - note.parser_version
+      - source_status
+      - source_revision
+      - schema_version
+      - parser_version
     sort:
-      - property: note.osf_number
+      - property: osf_number
         direction: ASC
-
   - type: table
-    name: "All Episodes"
+    name: All Episodes
     order:
-      - note.osf_number
+      - osf_number
       - file.name
-      - note.ingestion_status
-      - note.source_status
-      - note.source_revision
-      - note.schema_version
-      - note.parser_version
+      - ingestion_status
+      - source_status
+      - source_revision
+      - schema_version
+      - parser_version
     sort:
-      - property: note.osf_number
+      - property: osf_number
         direction: ASC

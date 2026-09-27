@@ -1,94 +1,87 @@
 filters:
   and:
     - file.inFolder("02 Entities")
-    - 'type == "entity"'
-
+    - type == "entity"
 properties:
   note.canonical_name:
-    displayName: "Entity"
+    displayName: Entity
   note.entity_type:
-    displayName: "Type"
+    displayName: Type
   note.first_seen:
-    displayName: "First seen"
+    displayName: First seen
   note.aliases:
-    displayName: "Aliases"
-
+    displayName: Aliases
 views:
   - type: table
-    name: "All Entities"
+    name: All Entities
     order:
-      - note.canonical_name
-      - note.entity_type
-      - note.first_seen
-      - note.aliases
+      - canonical_name
+      - entity_type
+      - first_seen
+      - aliases
       - file.name
     sort:
-      - property: note.canonical_name
+      - property: canonical_name
         direction: ASC
-
   - type: table
-    name: "Places"
+    name: Places
     filters:
       and:
-        - 'entity_type == "place"'
+        - entity_type == "place"
     order:
-      - note.canonical_name
-      - note.first_seen
-      - note.aliases
+      - canonical_name
+      - first_seen
+      - aliases
     sort:
-      - property: note.first_seen
+      - property: first_seen
         direction: ASC
-      - property: note.canonical_name
+      - property: canonical_name
         direction: ASC
-
   - type: table
-    name: "Organizations"
+    name: Organizations
     filters:
       and:
-        - 'entity_type == "organization"'
+        - entity_type == "organization"
     order:
-      - note.canonical_name
-      - note.first_seen
-      - note.aliases
+      - canonical_name
+      - first_seen
+      - aliases
     sort:
-      - property: note.first_seen
+      - property: first_seen
         direction: ASC
-
   - type: table
-    name: "Systems"
+    name: Systems
     filters:
       and:
-        - 'entity_type == "system"'
+        - entity_type == "system"
     order:
-      - note.canonical_name
-      - note.first_seen
-      - note.aliases
+      - canonical_name
+      - first_seen
+      - aliases
     sort:
-      - property: note.first_seen
+      - property: first_seen
         direction: ASC
-
   - type: table
-    name: "Phenomena"
+    name: Phenomena
     filters:
       and:
-        - 'entity_type == "phenomenon"'
+        - entity_type == "phenomenon"
     order:
-      - note.canonical_name
-      - note.first_seen
-      - note.aliases
+      - canonical_name
+      - first_seen
+      - aliases
     sort:
-      - property: note.first_seen
+      - property: first_seen
         direction: ASC
-
   - type: table
-    name: "People"
+    name: People
     filters:
       and:
-        - 'entity_type == "person"'
+        - entity_type == "person"
     order:
-      - note.canonical_name
-      - note.first_seen
-      - note.aliases
+      - canonical_name
+      - first_seen
+      - aliases
     sort:
-      - property: note.first_seen
+      - property: first_seen
         direction: ASC
