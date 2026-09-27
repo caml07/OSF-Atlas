@@ -10,7 +10,9 @@ Progress:
 - Batch 001–010: **complete**
 - Batch 011–020: **complete**
 - Batch 021–030: **complete**
-- Batch 031–040: pending
+- Discovery model / ELI5 README: **complete**
+- Public-safe GitHub main: **complete**
+- Batch 031–040: **paused pending human semantic review**
 
 ## Senior review
 
@@ -36,6 +38,10 @@ None remaining after the final review.
 7. Source Revision identity excludes volatile popularity metadata and includes
    material archival artifacts.
 8. Episode and Entity remain separate domain concepts.
+9. Primary Episode subjects start as unclassified Entities; the parser does not
+   guess Place/System/Person/etc. without evidence or human review.
+10. Lore Threads emerge from reviewed discoveries instead of being generated as
+    authoritative story summaries ahead of the user's reading.
 
 ### Deliberate v1 limitation
 
