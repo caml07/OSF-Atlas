@@ -67,6 +67,7 @@ class ParsedSource:
     description: str
     explicit_references: tuple[ExplicitReference, ...]
     incident_labels: tuple[str, ...]
+    structured_labels: tuple[str, ...] = ()
 
 
 @dataclass(frozen=True)

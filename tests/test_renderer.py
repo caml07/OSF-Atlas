@@ -71,6 +71,7 @@ This place feels tied to the bigger network.
         description=snapshot.description,
         explicit_references=(ExplicitReference("Terminal OSF-053", 53),),
         incident_labels=(),
+        structured_labels=("[VISITOR'S PASS]",),
     )
     target = EpisodeIdentity(53, "Terminal", "vid053", "OSF 053 - Terminal")
     knowledge = KnowledgeUpdate(
@@ -108,6 +109,10 @@ This place feels tied to the bigger network.
     ).read_text(encoding="utf-8")
     assert "[[The Veiled Monolith: Interior]]" in rendered
     assert "[[OSF 053 - Terminal]]" in rendered
+    assert "source_labels:" in rendered
+    assert "[VISITOR'S PASS]" in rendered
+    assert "### Source Markers" in rendered
+    assert "parser_version: 2" in rendered
     entity = (
         vault
         / "02 Entities"

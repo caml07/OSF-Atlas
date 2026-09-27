@@ -15,6 +15,9 @@ _EXPLICIT_OSF_REFERENCE = re.compile(
     r")"
 )
 _INCIDENT_LABEL = re.compile(r"\bIncident Log\s+[A-Za-z0-9-]+\b", re.IGNORECASE)
+_STRUCTURED_LABEL = re.compile(
+    r"(?m)^\[[A-Z][A-Z0-9'’ -]{1,64}\][ \t]*$"
+)
 
 
 class StructuralParser:
@@ -31,10 +34,17 @@ class StructuralParser:
         incident_labels = tuple(
             dict.fromkeys(match.group(0) for match in _INCIDENT_LABEL.finditer(snapshot.description))
         )
+        structured_labels = tuple(
+            dict.fromkeys(
+                match.group(0).strip()
+                for match in _STRUCTURED_LABEL.finditer(snapshot.description)
+            )
+        )
 
         return ParsedSource(
             snapshot=snapshot,
             description=snapshot.description,
             explicit_references=tuple(references),
             incident_labels=incident_labels,
+            structured_labels=structured_labels,
         )

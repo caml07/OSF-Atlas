@@ -122,7 +122,7 @@ class Renderer:
             f"osf_number: {identity.number}\n"
             f"source_revision: {source_revision}\n"
             "schema_version: 1\n"
-            "parser_version: 1\n"
+            "parser_version: 2\n"
             "tags: [osf, source]\n"
             "cssclasses: [osf-reader-source]\n"
             "---\n\n"
@@ -169,6 +169,7 @@ class Renderer:
             for c in knowledge.connections
             if c.status == "candidate"
         ]
+        source_labels = [label.replace('"', "'") for label in parsed.structured_labels]
         cover = f"[[06 Assets/Thumbnails/{thumbnail_name}]]"
         thumbnail_rel = f"../06%20Assets/Thumbnails/{thumbnail_name}"
         safe_title = identity.title.replace('"', "'")
@@ -188,11 +189,14 @@ class Renderer:
             "ingestion_status: complete",
             "lore_review_status: pending",
             "schema_version: 1",
-            "parser_version: 1",
+            "parser_version: 2",
             self._human_frontmatter_line("favorite", human_lines["favorite"]),
             self._human_frontmatter_line("rating", human_lines["rating"]),
             self._human_frontmatter_line("status", human_lines["status"]),
             self._human_frontmatter_line("last_read", human_lines["last_read"]),
+            "source_labels: ["
+            + ", ".join(f'"{label}"' for label in source_labels)
+            + "]",
             f'entities: ["[[{entity}]]"]',
             "confirmed_connections: ["
             + ", ".join(f'"[[{name}]]"' for name in confirmed)
@@ -216,6 +220,13 @@ class Renderer:
             if candidates
             else "_No candidate connections yet._"
         )
+        source_markers = (
+            "### Source Markers\n\n"
+            + "\n".join(f"- `{label}`" for label in parsed.structured_labels)
+            + "\n\n"
+            if parsed.structured_labels
+            else ""
+        )
 
         return (
             "\n".join(frontmatter)
@@ -231,6 +242,7 @@ class Renderer:
             + f"> [Watch on YouTube]({parsed.snapshot.url})\n\n"
             + "## Source\n\n"
             + f"![[05 Sources/{identity.number:03d}/source]]\n\n"
+            + source_markers
             + "## Lore Overview\n\n"
             + "_Semantic lore summary will grow from evidence-backed parsing and review._\n\n"
             + "## Entities\n\n"

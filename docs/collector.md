@@ -90,6 +90,7 @@ The StructuralParser may use targeted regexes internally for concrete syntax suc
 
 - `OSF-053`
 - incident-log labels
+- standalone structural labels such as `[VISITOR'S PASS]`
 - separators
 - known footer boundaries
 - hashtags/links
@@ -131,7 +132,7 @@ Generated artifacts track:
 
 ```yaml
 schema_version: 1
-parser_version: 1
+parser_version: 2
 ```
 
 This allows derived Markdown and knowledge projections to be rebuilt from preserved raw sources without refetching YouTube.
@@ -166,6 +167,8 @@ The representative checks now cover:
 - early/simple source and exact description preservation;
 - synthetic manual + automatic English caption handling;
 - exact colon-title variants such as `Silent Arbiter: Interior Hall` → `Silent Arbiter`;
+- standalone all-caps bracket labels such as `[VISITOR'S PASS]` without
+  assigning semantic meaning to the label;
 - `090 // The Between` with no captions and `Incident Log 07-B`;
 - `114 // The Veiled Monolith: Interior` with explicit parenthetical references
   to `OSF-014` and `OSF-053`.

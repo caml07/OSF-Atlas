@@ -21,6 +21,7 @@
     "rating": "number",
     "status": "text",
     "last_read": "datetime",
+    "source_labels": "multitext",
     "entities": "multitext",
     "confirmed_connections": "multitext",
     "candidate_connections": "multitext",

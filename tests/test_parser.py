@@ -57,3 +57,27 @@ def test_parser_preserves_parenthetical_reference_context() -> None:
         ("The Veiled Monolith (OSF-014)", 14),
         ("Terminal (OSF-053)", 53),
     ]
+
+
+def test_parser_extracts_standalone_structural_labels_without_interpreting_them() -> None:
+    description = (
+        "[VISITOR'S PASS]\n\n"
+        "Inside the structure, nothing explains what the pass means.\n"
+        "[NOT A LABEL because mixed case]\n"
+    )
+    snapshot = SourceSnapshot(
+        episode=EpisodeRef(number=43, video_id="vid043"),
+        title="043 // Silent Arbiter: Interior Hall - Ambient",
+        description=description,
+        published=None,
+        duration_seconds=3600,
+        info={},
+        captions=(),
+        thumbnail=b"image",
+        thumbnail_ext="webp",
+        url="https://www.youtube.com/watch?v=vid043",
+    )
+
+    parsed = StructuralParser().parse(snapshot)
+
+    assert parsed.structured_labels == ("[VISITOR'S PASS]",)
