@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 012 - Vestige]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 012 - Vestige]].
 
 ## Appears In

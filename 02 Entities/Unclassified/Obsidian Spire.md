@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 017 - Obsidian Spire]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 017 - Obsidian Spire]].
 
 ## Appears In

@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 029 - Orbital Labs]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 029 - Orbital Labs]].
 
 ## Appears In

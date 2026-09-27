@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 006 - Tribute]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 006 - Tribute]].
 
 ## Appears In

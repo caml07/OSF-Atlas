@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 025 - Snow Angler]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 025 - Snow Angler]].
 
 ## Appears In

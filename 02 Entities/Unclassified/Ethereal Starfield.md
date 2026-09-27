@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 010 - Ethereal Starfield]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 010 - Ethereal Starfield]].
 
 ## Appears In

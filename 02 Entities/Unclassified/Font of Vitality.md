@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 007 - Font of Vitality]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 007 - Font of Vitality]].
 
 ## Appears In

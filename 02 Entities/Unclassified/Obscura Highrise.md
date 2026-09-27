@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 028 - Obscura Highrise]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 028 - Obscura Highrise]].
 
 ## Appears In

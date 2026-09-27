@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 002 - Echelon Conservatory]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 002 - Echelon Conservatory]].
 
 ## Appears In

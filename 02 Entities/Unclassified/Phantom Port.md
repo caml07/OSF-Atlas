@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 018 - Phantom Port]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 018 - Phantom Port]].
 
 ## Appears In

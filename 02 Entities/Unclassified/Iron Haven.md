@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 001 - Iron Haven]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 001 - Iron Haven]].
 
 ## Appears In

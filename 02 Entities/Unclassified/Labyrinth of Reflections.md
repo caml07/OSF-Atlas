@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 005 - Labyrinth of Reflections]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 005 - Labyrinth of Reflections]].
 
 ## Appears In

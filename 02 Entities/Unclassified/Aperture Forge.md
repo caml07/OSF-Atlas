@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 021 - Aperture Forge]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 021 - Aperture Forge]].
 
 ## Appears In

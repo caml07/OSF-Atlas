@@ -18,6 +18,12 @@ cssclasses:
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 ## Appears In
 
 -

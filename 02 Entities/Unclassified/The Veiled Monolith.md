@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 014 - The Veiled Monolith]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 014 - The Veiled Monolith]].
 
 ## Appears In

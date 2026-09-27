@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 030 - Endless Paths]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 030 - Endless Paths]].
 
 ## Appears In

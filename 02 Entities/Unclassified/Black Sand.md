@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 019 - Black Sand]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 019 - Black Sand]].
 
 ## Appears In

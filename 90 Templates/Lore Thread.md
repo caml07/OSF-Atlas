@@ -14,6 +14,12 @@ cssclasses:
 
 ## Overview
 
+> This thread exists because the reader identified a recurring narrative path. It is a research trail, not an automatically generated canon summary.
+
+## Discovery Log
+
+-
+
 ## Episodes
 
 -
@@ -23,6 +29,14 @@ cssclasses:
 -
 
 ## Confirmed Evidence
+
+-
+
+## Inferred Connections
+
+-
+
+## Rejected / Reopened Ideas
 
 -
 

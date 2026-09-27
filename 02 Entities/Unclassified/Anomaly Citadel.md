@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 024 - Anomaly Citadel]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 024 - Anomaly Citadel]].
 
 ## Appears In

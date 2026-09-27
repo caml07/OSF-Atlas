@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 003 - Mourning Hall]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 003 - Mourning Hall]].
 
 ## Appears In

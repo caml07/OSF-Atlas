@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 004 - Seraphim Institute]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 004 - Seraphim Institute]].
 
 ## Appears In

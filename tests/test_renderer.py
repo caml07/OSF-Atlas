@@ -116,6 +116,10 @@ This place feels tied to the bigger network.
     ).read_text(encoding="utf-8")
     assert "entity_type: unknown" in entity
     assert "review_status: unclassified" in entity
+    assert "### Classification" in entity
+    assert "- Status: unclassified" in entity
+    assert "- Human reasoning:" in entity
+    assert "- Source/evidence:" in entity
 
 
 def test_renderer_keeps_empty_human_properties_and_reader_markdown_clean(tmp_path: Path) -> None:

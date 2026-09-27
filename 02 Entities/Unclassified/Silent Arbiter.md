@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 016 - Silent Arbiter]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 016 - Silent Arbiter]].
 
 ## Appears In

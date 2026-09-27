@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 022 - District Core]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 022 - District Core]].
 
 ## Appears In

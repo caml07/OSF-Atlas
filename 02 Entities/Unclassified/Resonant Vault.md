@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 023 - Resonant Vault]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 023 - Resonant Vault]].
 
 ## Appears In

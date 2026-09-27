@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 026 - Enclaves]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 026 - Enclaves]].
 
 ## Appears In

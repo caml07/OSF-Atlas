@@ -29,11 +29,15 @@ The Markdown note used for reading an Episode inside Obsidian. It presents sourc
 _Avoid_: Raw Source
 
 **Entity**:
-A named thing with independent identity inside OSF lore, such as a place, organization, system, phenomenon, or person, that deserves its own graph node. A primary Episode subject may be seeded as an unclassified Entity, but its semantic type must not be guessed automatically.
+A named thing with independent identity inside OSF lore that deserves its own graph node. A primary Episode subject may be seeded as an unclassified Entity. It remains an Entity after classification; Place, Person, Organization, System, and Phenomenon are human-reviewed Entity types, not automatic promotions or separate domain objects.
 _Avoid_: Tag when the concept has independent lore identity
 
+**Entity Classification**:
+A human-reviewed decision made while reading/researching that changes an Entity from `unknown` to a semantic type such as place, person, organization, system, or phenomenon. The agent may organize and persist the decision, but ingestion/parser output must not make it on the user's behalf.
+_Avoid_: Automatic semantic classification
+
 **Lore Thread**:
-A research trail representing a recurring narrative relationship discovered across multiple Episodes or Entities. It should emerge from reviewed evidence/connections rather than being generated as an authoritative storyline in advance.
+A human-started research trail representing a recurring narrative relationship the user has discovered across multiple Episodes or Entities. The agent may maintain and extend the trail when instructed, but Graph proximity, parser output, or LLM interpretation alone must not create one.
 _Avoid_: Category, topic
 
 **Confirmed Connection**:
@@ -81,5 +85,5 @@ Derived or retrieved material that the collector may regenerate, such as metadat
 _Avoid_: Personal notes
 
 **Human-Owned Content**:
-User-authored state that automation must preserve, including favorites, reading progress, personal notes, theories, and manually reviewed relationship decisions.
+User-authored state that automation must preserve, including favorites, reading progress, personal notes, theories, Entity classifications, Lore Thread creation/naming, and manually reviewed relationship decisions.
 _Avoid_: Generated content

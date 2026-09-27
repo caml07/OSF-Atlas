@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 008 - Twilight Bastion]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 008 - Twilight Bastion]].
 
 ## Appears In

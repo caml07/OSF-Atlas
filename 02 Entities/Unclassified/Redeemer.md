@@ -17,6 +17,12 @@ Primary subject associated with [[OSF 011 - Redeemer]].
 
 ## Evidence
 
+### Classification
+
+- Status: unclassified
+- Human reasoning:
+- Source/evidence:
+
 - Primary subject of [[OSF 011 - Redeemer]].
 
 ## Appears In
