@@ -1,0 +1,45 @@
+filters:
+  and:
+    - file.inFolder("04 My Notes")
+    - 'type == "research-note"'
+
+properties:
+  note.created:
+    displayName: "Created"
+  note.updated:
+    displayName: "Updated"
+  note.related_episodes:
+    displayName: "Episodes"
+  note.related_entities:
+    displayName: "Entities"
+  note.related_threads:
+    displayName: "Lore threads"
+
+views:
+  - type: table
+    name: "Recent Notes"
+    order:
+      - file.name
+      - note.updated
+      - note.related_episodes
+      - note.related_entities
+      - note.related_threads
+    sort:
+      - property: note.updated
+        direction: DESC
+      - property: file.mtime
+        direction: DESC
+    limit: 12
+
+  - type: table
+    name: "All Research"
+    order:
+      - file.name
+      - note.created
+      - note.updated
+      - note.related_episodes
+      - note.related_entities
+      - note.related_threads
+    sort:
+      - property: note.updated
+        direction: DESC

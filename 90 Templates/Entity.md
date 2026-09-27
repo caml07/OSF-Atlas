@@ -1,11 +1,14 @@
 ---
 type: entity
+canonical_name:
 entity_type:
 aliases: []
 first_seen:
 tags:
   - osf
   - entity
+cssclasses:
+  - osf-entity
 ---
 
 # {{ENTITY}}

@@ -1,6 +1,12 @@
 # OSF Atlas Plan v3
 
-Status: approved planning baseline
+Status: approved implementation plan
+
+Progress:
+
+- Milestone 0 — vault scaffold: **complete**
+- Milestone 1 — parser project and TDD seams: pending
+- Corpus ingestion: not started
 
 ## Senior review
 

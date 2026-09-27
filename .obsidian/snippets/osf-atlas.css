@@ -1,0 +1,101 @@
+/* Obsidian Soundfields Atlas — minimal / brutalist visual layer.
+   Built to sit on top of Minimal without requiring a community plugin. */
+
+.osf-atlas,
+.osf-episode,
+.osf-entity,
+.osf-lore-thread,
+.osf-research-note,
+.osf-reader-source {
+  --file-line-width: 1080px;
+}
+
+.osf-atlas .markdown-preview-view > h1,
+.osf-atlas .markdown-source-view.mod-cm6 .cm-line.HyperMD-header-1 {
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  border-bottom: 2px solid var(--text-normal);
+  padding-bottom: 0.55rem;
+}
+
+.osf-atlas h2,
+.osf-episode h2,
+.osf-entity h2,
+.osf-lore-thread h2,
+.osf-research-note h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.92em;
+  border-bottom: 1px solid var(--background-modifier-border);
+  padding-bottom: 0.35rem;
+  margin-top: 2.2rem;
+}
+
+.osf-atlas .callout,
+.osf-episode .callout,
+.osf-reader-source .callout {
+  border-radius: 0;
+  box-shadow: none;
+  border-width: 1px;
+}
+
+.osf-atlas .internal-embed,
+.osf-atlas .bases-embed {
+  border-radius: 0;
+}
+
+.osf-atlas .bases-embed {
+  --bases-embed-border-radius: 0;
+  --bases-cards-border-width: 1px;
+  --bases-cards-shadow: none;
+  --bases-cards-shadow-hover: none;
+}
+
+.osf-atlas .bases-cards-item,
+.osf-atlas .bases-table-container {
+  border-radius: 0;
+}
+
+.osf-episode img,
+.osf-reader-source img {
+  border-radius: 0;
+}
+
+.osf-episode .markdown-preview-view img {
+  width: 100%;
+  max-width: 980px;
+  display: block;
+  margin: 1rem auto 1.5rem;
+  border: 1px solid var(--background-modifier-border);
+}
+
+.osf-atlas blockquote {
+  border-left-width: 2px;
+}
+
+.osf-kicker {
+  font-family: var(--font-monospace);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: var(--font-ui-smaller);
+  color: var(--text-muted);
+}
+
+.osf-divider {
+  border: 0;
+  border-top: 2px solid var(--text-normal);
+  margin: 2.25rem 0;
+}
+
+.osf-reader-source .markdown-preview-view {
+  line-height: 1.72;
+}
+
+.osf-reader-source h2 {
+  margin-top: 2rem;
+}
+
+.osf-research-note .markdown-preview-view {
+  --file-line-width: 900px;
+}

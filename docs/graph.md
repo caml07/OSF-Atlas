@@ -1,6 +1,6 @@
 # Graph Design
 
-Status: planning reference
+Status: scaffold implemented
 
 ## Why filter the graph
 

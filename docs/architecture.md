@@ -1,6 +1,6 @@
 # Architecture
 
-Status: planning reference
+Status: current architecture reference
 
 ## Goal
 
@@ -239,7 +239,9 @@ docs/
 CONTEXT.md
 ```
 
-The current scaffold predates this architecture and is disposable except for approved planning documentation and ADRs.
+The current scaffold implements this folder model and Obsidian-facing
+architecture. Collector/parser internals remain to be implemented in the next
+milestones.
 
 ## Local Git history
 

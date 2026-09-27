@@ -1,13 +1,29 @@
-# Obsidian local state
+# Obsidian local/session state
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/cache/
 .trash/
 .DS_Store
 
-# Optional local theme install; repo keeps only portable config/snippets
+# Theme is copied locally from the existing KU vault.
+# Keep the project config/snippet tracked, not the third-party theme payload.
 .obsidian/themes/
 
-# Full source text supplied/owned by the user stays local by default
-99 Local Source Text/*.md
-!99 Local Source Text/README.md
+# Collector transient state
+.osf/staging/
+.osf/cache/
+.osf/tmp/
+
+# Raw source revisions and downloaded thumbnails are preserved locally
+# outside Git to avoid duplicating binary/archive history.
+05 Sources/*/revisions/
+06 Assets/Thumbnails/*
+!06 Assets/Thumbnails/.gitkeep
+
+# Python tooling (Milestone 1+)
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/

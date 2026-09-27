@@ -1,6 +1,6 @@
 # Obsidian UX
 
-Status: planning reference
+Status: scaffold implemented; collector-backed content pending
 
 ## Design intent
 
@@ -8,7 +8,7 @@ The vault should feel like a dark, quiet OSF research atlas rather than a corpor
 
 ## Episode Note
 
-The exact visual design is still open. The approved information hierarchy is:
+The scaffold implements the approved information hierarchy:
 
 ```text
 Episode title

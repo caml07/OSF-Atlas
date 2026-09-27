@@ -17,4 +17,10 @@ Durable decisions live in [[adr/]].
 
 ## Status
 
-These documents currently describe the **approved planning direction**, not a completed implementation. The existing scaffold is provisional and may be replaced after the grill and final senior review.
+Planning is complete and **Milestone 0 (vault scaffold)** is implemented.
+
+The Atlas, Bases, Graph defaults, Properties schema, templates, local visual
+layer, and final project folders now follow the approved architecture.
+
+Collector/parser code and corpus ingestion remain pending; those sections of the
+documentation describe the implementation contract for the next milestones.

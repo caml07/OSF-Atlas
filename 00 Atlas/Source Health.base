@@ -1,0 +1,80 @@
+filters:
+  and:
+    - file.inFolder("01 Episodes")
+    - 'type == "episode"'
+
+properties:
+  note.osf_number:
+    displayName: "OSF #"
+  note.ingestion_status:
+    displayName: "Ingestion"
+  note.source_status:
+    displayName: "Source"
+  note.source_revision:
+    displayName: "Current revision"
+  note.schema_version:
+    displayName: "Schema"
+  note.parser_version:
+    displayName: "Parser"
+
+views:
+  - type: table
+    name: "Failures"
+    filters:
+      and:
+        - 'ingestion_status == "failed"'
+    order:
+      - note.osf_number
+      - file.name
+      - note.ingestion_status
+      - note.source_status
+      - note.source_revision
+    sort:
+      - property: note.osf_number
+        direction: ASC
+
+  - type: table
+    name: "Pending"
+    filters:
+      and:
+        - 'ingestion_status != "complete"'
+        - 'ingestion_status != "failed"'
+    order:
+      - note.osf_number
+      - file.name
+      - note.ingestion_status
+      - note.source_status
+      - note.source_revision
+    sort:
+      - property: note.osf_number
+        direction: ASC
+
+  - type: table
+    name: "Complete"
+    filters:
+      and:
+        - 'ingestion_status == "complete"'
+    order:
+      - note.osf_number
+      - file.name
+      - note.source_status
+      - note.source_revision
+      - note.schema_version
+      - note.parser_version
+    sort:
+      - property: note.osf_number
+        direction: ASC
+
+  - type: table
+    name: "All Episodes"
+    order:
+      - note.osf_number
+      - file.name
+      - note.ingestion_status
+      - note.source_status
+      - note.source_revision
+      - note.schema_version
+      - note.parser_version
+    sort:
+      - property: note.osf_number
+        direction: ASC

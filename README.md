@@ -1,86 +1,82 @@
 # Obsidian Soundfields Atlas
 
-A fan-made Obsidian knowledge vault for exploring the locations, structures, organizations, phenomena, and recurring lore in the numbered **Obsidian Soundfields (OSF)** YouTube series.
+A local-first Obsidian vault for reading, preserving, and connecting the numbered **Obsidian Soundfields (OSF)** series.
 
-The goal is not just to list videos. The vault is designed to make recurring places and ideas visible as a connected knowledge graph so that later episodes can point back to earlier locations and reveal larger lore threads.
+The project keeps the source material exposed by each video separate from the knowledge graph built around it:
 
-## What this vault contains
+- exact extracted source is preserved as immutable local revisions;
+- a generated Reader Source makes the material comfortable to read in Obsidian;
+- Episodes, Entities, and Lore Threads remain distinct graph nodes;
+- explicit lore references keep provenance;
+- personal notes, favorites, ratings, and reading state remain human-owned;
+- video and audio are intentionally not downloaded.
 
-- A chronological index of the numbered OSF episodes
-- One structured note per episode
-- A direct YouTube link and video thumbnail in every episode note
-- Lore summaries and extracted facts
-- Explicit connections to earlier or later episodes
-- Separate notes for recurring places, organizations, systems, people, and phenomena
-- Lore-thread notes for larger storylines
-- Reading/listening status
-- Favorites
-- A section for personal notes and theories
-- Obsidian Bases views for browsing the collection
+## Open the vault
 
-## Vault structure
+Open this directory directly in Obsidian:
 
 ```text
-00 Atlas/                Main navigation, indexes, progress, favorites
-01 Episodes/             One note per numbered OSF episode
-02 Entities/             Reusable lore entities referenced by episodes
-03 Lore Threads/         Larger relationships and recurring storylines
-04 My Notes/             Personal theories and free-form notes
-90 Templates/            Note templates
-99 Local Source Text/    Optional local-only source text
-.obsidian/               Portable Obsidian configuration
+/home/caml/Documents/Obsidian/Obsidian Soundfields
 ```
 
-## Episode notes
+The local vault uses:
 
-Every episode note is intended to contain:
+- Minimal theme
+- Comfortaa
+- native Properties
+- native Bases
+- Graph / Local Graph
+- native Templates
+- one small local CSS snippet for the OSF visual layer
 
-1. Video thumbnail
-2. Direct YouTube link
-3. Episode metadata
-4. Location/lore summary
-5. Important facts
-6. Mentioned entities
-7. Confirmed connections
-8. Possible/inferred connections
-9. Personal notes
-10. Optional local source-text embed
+No community plugin is required for the core experience.
 
-Connections are deliberately separated into **confirmed** and **inferred** relationships so that personal theories do not accidentally become indistinguishable from material explicitly stated by OSF.
+## Start here
 
-## Full source text
+Open [[00 Atlas/OSF Atlas|OSF Atlas]].
 
-The public repository is designed around structured notes rather than redistributing complete OSF descriptions or transcripts.
+Useful surfaces:
 
-For a personal local vault, source text that you provide can live in `99 Local Source Text/`. Those Markdown files are ignored by Git by default and can be embedded directly inside the related episode note.
+- [[00 Atlas/Index|Episode Index]]
+- [[00 Atlas/Chronology|Chronology]]
+- [[00 Atlas/Favorites|Favorites]]
+- [[00 Atlas/Reading Progress|Reading Progress]]
+- [[00 Atlas/Lore Map|Lore Map]]
+- [[00 Atlas/Review Queue|Review Queue]]
+- [[00 Atlas/Source Health|Source Health]]
 
-This lets the local vault show a complete source-text section while keeping a future public GitHub repository focused on original notes, indexing, and analysis.
+## Structure
 
-## Progress
+```text
+00 Atlas/                 home, Bases, review and navigation
+01 Episodes/              one note per numbered OSF release
+02 Entities/              in-universe graph nodes
+03 Lore Threads/          recurring narrative relationships
+04 My Notes/              human-owned research / opinions / theories
+05 Sources/               Reader Source + local immutable raw revisions
+06 Assets/                local thumbnails and future vault assets
+90 Templates/             Obsidian note templates
+tools/osf/                collector/parser project (next milestone)
+tests/                    TDD fixtures and behavioral tests (next milestone)
+.osf/                     machine state / canonical knowledge internals
+docs/                     architecture, UX, decisions and implementation plan
+```
 
-The numbered YouTube series currently runs from **001 // Iron Haven** through **125 // Loam**.
+## Human-owned Episode state
 
-Ingestion is planned in chronological batches of ten:
+Every Episode supports:
 
-- 001-010
-- 011-020
-- 021-030
-- 031-040
-- 041-050
-- 051-060
-- 061-070
-- 071-080
-- 081-090
-- 091-100
-- 101-110
-- 111-120
-- 121-125
-- Final lore-link and consistency pass
+```yaml
+favorite: false
+rating:
+status: unread
+last_read:
+```
 
-See [[00 Atlas/Index|Episode Index]] for the full list.
+Ratings use a **1–10** scale. The `osf-vault` agent skill can maintain these fields during agentic reading and can capture free-form Spanish/English/Spanglish research notes without treating personal interpretation as canon.
 
-## Source
+## Current implementation state
 
-All original Obsidian Soundfields videos and their source material belong to their respective creator.
+Planning is complete. The vault scaffold implements the approved Obsidian UX and project structure.
 
-This vault is an independent fan project and is not affiliated with or endorsed by Obsidian Soundfields.
+The collector/parser and corpus ingestion have **not** started yet. See [[docs/plan-v3|Plan v3]] for the implementation sequence.

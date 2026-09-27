@@ -1,15 +1,25 @@
 ---
 type: episode
-osf_number: "{{NUMBER}}"
-title: "{{TITLE}}"
-youtube_id: "{{YOUTUBE_ID}}"
-youtube_url: "https://www.youtube.com/watch?v={{YOUTUBE_ID}}"
+osf_number:
+title:
+youtube_id:
+youtube_url:
 published:
-status: unread
+duration_seconds:
+cover:
+source_revision:
+source_status: pending
+ingestion_status: pending
+lore_review_status: pending
+schema_version: 1
+parser_version: 1
 favorite: false
-lore_status: unreviewed
+rating:
+status: unread
+last_read:
 entities: []
 confirmed_connections: []
+candidate_connections: []
 inferred_connections: []
 tags:
   - osf
@@ -20,49 +30,48 @@ cssclasses:
 
 # {{NUMBER}} // {{TITLE}}
 
-[![{{NUMBER}} // {{TITLE}}](https://i.ytimg.com/vi/{{YOUTUBE_ID}}/hqdefault.jpg)](https://www.youtube.com/watch?v={{YOUTUBE_ID}})
+<!-- OSF:GENERATED:START -->
 
-[Watch on YouTube](https://www.youtube.com/watch?v={{YOUTUBE_ID}})
+[![{{NUMBER}} // {{TITLE}}]({{THUMBNAIL_PATH}})]({{YOUTUBE_URL}})
 
-## Location Record
+> [!info] Episode
+> **OSF:** {{NUMBER}}<br>
+> **Published:** {{PUBLISHED}}<br>
+> **Current source revision:** {{SOURCE_REVISION}}<br>
+> [Watch on YouTube]({{YOUTUBE_URL}})
 
-> [!SUMMARY] Summary
-> Structured summary of the location and its role.
+## Source
 
-## Key Facts
+![[05 Sources/{{NUMBER}}/source]]
 
--
+## Lore Overview
 
-## Entities Mentioned
+_This section is generated from preserved source material._
 
--
+## Entities
+
+_No confirmed Entities yet._
 
 ## Connections
 
 ### Confirmed
 
-Connections explicitly supported by OSF material.
+_No confirmed connections yet._
 
--
+### Candidates
+
+_No candidate connections yet._
 
 ### Inferred
 
-Possible relationships or personal interpretations. Keep these separate from confirmed lore.
+_No inferred connections yet._
 
--
-
-## Source Text
-
-> [!NOTE] Local source-text embed
-> If a complete source text has been supplied for personal use, place it in `99 Local Source Text/OSF {{NUMBER}} - {{TITLE}}.md`. It can then be embedded below.
-
-![[99 Local Source Text/OSF {{NUMBER}} - {{TITLE}}]]
+<!-- OSF:GENERATED:END -->
 
 ## My Notes
 
+<!-- OSF:HUMAN:START -->
+
 -
 
-## Related
-
-- [[../00 Atlas/Index|Episode Index]]
-- [[../00 Atlas/Lore Map|Lore Map]]
+<!-- OSF:HUMAN:END -->

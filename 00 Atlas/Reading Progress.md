@@ -1,20 +1,28 @@
 ---
+type: atlas-view
 tags:
   - osf
-  - progress
-type: atlas-view
+  - reading
+cssclasses:
+  - osf-atlas
 ---
 
 # Reading Progress
+
+## Continue Reading
+
+![[Episodes.base#Continue Reading]]
+
+## Currently Reading
+
+![[Episodes.base#Reading]]
 
 ## Unread
 
 ![[Episodes.base#Unread]]
 
-## In progress
-
-![[Episodes.base#In Progress]]
-
 ## Completed
 
 ![[Episodes.base#Completed]]
+
+[[OSF Atlas|Back to Atlas]]

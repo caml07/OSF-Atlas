@@ -1,0 +1,81 @@
+filters:
+  and:
+    - 'type == "connection-decision"'
+
+properties:
+  note.connection_status:
+    displayName: "Decision"
+  note.from_note:
+    displayName: "From"
+  note.to_note:
+    displayName: "To"
+  note.evidence_episode:
+    displayName: "Evidence episode"
+  note.evidence_source:
+    displayName: "Evidence"
+  note.updated:
+    displayName: "Updated"
+
+views:
+  - type: table
+    name: "Needs Review"
+    filters:
+      or:
+        - 'connection_status == "candidate"'
+        - 'connection_status == "reopened"'
+    order:
+      - note.connection_status
+      - note.from_note
+      - note.to_note
+      - note.evidence_episode
+      - note.evidence_source
+      - note.updated
+    sort:
+      - property: note.updated
+        direction: DESC
+
+  - type: table
+    name: "Recently Confirmed"
+    filters:
+      and:
+        - 'connection_status == "confirmed"'
+    order:
+      - note.from_note
+      - note.to_note
+      - note.evidence_episode
+      - note.evidence_source
+      - note.updated
+    sort:
+      - property: note.updated
+        direction: DESC
+    limit: 12
+
+  - type: table
+    name: "Inferred"
+    filters:
+      and:
+        - 'connection_status == "inferred"'
+    order:
+      - note.from_note
+      - note.to_note
+      - note.evidence_episode
+      - note.evidence_source
+      - note.updated
+    sort:
+      - property: note.updated
+        direction: DESC
+
+  - type: table
+    name: "Rejected"
+    filters:
+      and:
+        - 'connection_status == "rejected"'
+    order:
+      - note.from_note
+      - note.to_note
+      - note.evidence_episode
+      - note.evidence_source
+      - note.updated
+    sort:
+      - property: note.updated
+        direction: DESC

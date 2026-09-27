@@ -1,12 +1,22 @@
 ---
+type: atlas-view
 tags:
   - osf
   - favorites
-type: atlas-view
+cssclasses:
+  - osf-atlas
 ---
 
 # Favorites
 
-Episodes marked with `favorite: true`.
+Favorite and highly rated Episodes are human-owned state.
+
+## Favorites
 
 ![[Episodes.base#Favorites]]
+
+## Top Rated
+
+![[Episodes.base#Top Rated]]
+
+[[OSF Atlas|Back to Atlas]]

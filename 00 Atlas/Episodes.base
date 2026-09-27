@@ -3,41 +3,142 @@ filters:
     - file.inFolder("01 Episodes")
     - 'type == "episode"'
 
+formulas:
+  continue_rank: 'if(status == "reading", 0, if(status == "unread", 1, 2))'
+
 properties:
-  osf_number:
+  note.osf_number:
     displayName: "OSF #"
-  title:
+  note.title:
     displayName: "Location"
-  status:
-    displayName: "Status"
-  favorite:
+  note.status:
+    displayName: "Reading"
+  note.favorite:
     displayName: "Favorite"
-  published:
+  note.rating:
+    displayName: "Rating /10"
+  note.last_read:
+    displayName: "Last read"
+  note.published:
     displayName: "Published"
-  youtube_url:
+  note.ingestion_status:
+    displayName: "Ingestion"
+  note.lore_review_status:
+    displayName: "Lore review"
+  note.youtube_url:
     displayName: "YouTube"
 
 views:
+  - type: cards
+    name: "Gallery"
+    order:
+      - file.name
+      - note.rating
+      - note.status
+      - note.favorite
+    sort:
+      - property: note.osf_number
+        direction: ASC
+    image: note.cover
+    cardSize: 260
+    imageFit: cover
+    imageAspectRatio: 0.5625
+
   - type: table
     name: "All Episodes"
     order:
-      - osf_number
-      - title
-      - status
-      - favorite
-      - published
-      - youtube_url
+      - note.osf_number
+      - file.name
+      - note.status
+      - note.favorite
+      - note.rating
+      - note.last_read
+      - note.ingestion_status
+      - note.lore_review_status
+      - note.youtube_url
+    sort:
+      - property: note.osf_number
+        direction: ASC
 
-  - type: table
+  - type: cards
+    name: "Continue Reading"
+    filters:
+      and:
+        - 'status != "complete"'
+    order:
+      - file.name
+      - note.status
+      - note.last_read
+      - note.rating
+    sort:
+      - property: formula.continue_rank
+        direction: ASC
+      - property: note.last_read
+        direction: DESC
+      - property: note.osf_number
+        direction: ASC
+    image: note.cover
+    cardSize: 300
+    imageFit: cover
+    imageAspectRatio: 0.5625
+    limit: 1
+
+  - type: cards
     name: "Favorites"
     filters:
       and:
         - 'favorite == true'
     order:
-      - osf_number
-      - title
-      - status
-      - youtube_url
+      - file.name
+      - note.rating
+      - note.status
+    sort:
+      - property: note.rating
+        direction: DESC
+      - property: note.osf_number
+        direction: ASC
+    image: note.cover
+    cardSize: 230
+    imageFit: cover
+    imageAspectRatio: 0.5625
+
+  - type: cards
+    name: "Top Rated"
+    filters:
+      and:
+        - 'rating >= 1'
+    order:
+      - file.name
+      - note.rating
+      - note.favorite
+      - note.status
+    sort:
+      - property: note.rating
+        direction: DESC
+      - property: note.osf_number
+        direction: ASC
+    image: note.cover
+    cardSize: 230
+    imageFit: cover
+    imageAspectRatio: 0.5625
+    limit: 12
+
+  - type: table
+    name: "Reading"
+    filters:
+      and:
+        - 'status == "reading"'
+    order:
+      - note.osf_number
+      - file.name
+      - note.last_read
+      - note.rating
+      - note.favorite
+    sort:
+      - property: note.last_read
+        direction: DESC
+      - property: note.osf_number
+        direction: ASC
 
   - type: table
     name: "Unread"
@@ -45,19 +146,13 @@ views:
       and:
         - 'status == "unread"'
     order:
-      - osf_number
-      - title
-      - favorite
-
-  - type: table
-    name: "In Progress"
-    filters:
-      and:
-        - 'status == "reading"'
-    order:
-      - osf_number
-      - title
-      - favorite
+      - note.osf_number
+      - file.name
+      - note.favorite
+      - note.rating
+    sort:
+      - property: note.osf_number
+        direction: ASC
 
   - type: table
     name: "Completed"
@@ -65,6 +160,13 @@ views:
       and:
         - 'status == "complete"'
     order:
-      - osf_number
-      - title
-      - favorite
+      - note.osf_number
+      - file.name
+      - note.last_read
+      - note.rating
+      - note.favorite
+    sort:
+      - property: note.last_read
+        direction: DESC
+      - property: note.osf_number
+        direction: ASC

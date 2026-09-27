@@ -1,0 +1,36 @@
+filters:
+  and:
+    - file.inFolder("03 Lore Threads")
+    - 'type == "lore-thread"'
+
+properties:
+  note.status:
+    displayName: "Thread status"
+  note.updated:
+    displayName: "Updated"
+
+views:
+  - type: table
+    name: "All Lore Threads"
+    order:
+      - file.name
+      - note.status
+      - note.updated
+    sort:
+      - property: note.updated
+        direction: DESC
+      - property: file.name
+        direction: ASC
+
+  - type: table
+    name: "Active Threads"
+    filters:
+      and:
+        - 'status != "archived"'
+    order:
+      - file.name
+      - note.status
+      - note.updated
+    sort:
+      - property: note.updated
+        direction: DESC

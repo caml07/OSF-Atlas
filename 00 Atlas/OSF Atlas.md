@@ -1,39 +1,75 @@
 ---
+type: atlas
 tags:
   - osf
-  - moc
-type: atlas
+  - atlas
+cssclasses:
+  - osf-atlas
 ---
 
-# Obsidian Soundfields Atlas
+# OBSIDIAN SOUNDFIELDS
 
-> [!INFO] Purpose
-> A connected map of the numbered Obsidian Soundfields series: episodes, locations, recurring entities, lore threads, and personal theories.
+<div class="osf-kicker">Lore / Archive / Research</div>
 
-## Start here
+> [!abstract] Local atlas
+> **125 numbered Episodes are known.** This vault is the reading surface, archive, lore graph, and personal research workspace.
+>
+> Source preservation and corpus ingestion begin in the next milestone. Personal state is already modeled as human-owned.
 
-- [[Index]] — all numbered episodes in chronological order
-- [[Episodes.base]] — database-style episode browser
-- [[Favorites]] — episodes marked as favorites
-- [[Reading Progress]] — unread and in-progress episodes
-- [[Lore Map]] — entry point for recurring lore and relationships
-- [[../04 My Notes/My Theories|My Theories]] — personal interpretation space
+## Continue Reading
 
-## How to read the vault
+![[Episodes.base#Continue Reading]]
 
-Each episode becomes a node in the graph. Repeated locations, organizations, systems, people, and phenomena become their own nodes instead of being duplicated as plain text.
+## Browse
 
-Connections use two levels:
+- [[Index|Episode Index]]
+- [[Chronology]]
+- [[Lore Map]]
+- [[Review Queue]]
+- [[Source Health]]
+- [[Reading Progress]]
+- [[Favorites]]
+- [[Research.base#All Research|My Research]]
 
-- **Confirmed connection** — explicitly supported by OSF material.
-- **Inferred connection** — a theory, visual parallel, naming similarity, or other interpretation that is not explicitly confirmed.
+---
 
-## Status vocabulary
+## Favorites
 
-- `unread`
-- `reading`
-- `complete`
+![[Episodes.base#Favorites]]
 
-## Favorite episodes
+## Top Rated
 
-Set the `favorite` property of an episode to `true`. The Favorites view will collect it automatically.
+![[Episodes.base#Top Rated]]
+
+---
+
+## Lore Review
+
+![[Lore Review.base#Needs Review]]
+
+### Recently Confirmed
+
+![[Lore Review.base#Recently Confirmed]]
+
+---
+
+## Source Health
+
+### Failures
+
+![[Source Health.base#Failures]]
+
+### Pending
+
+![[Source Health.base#Pending]]
+
+---
+
+## Recent Research
+
+![[Research.base#Recent Notes]]
+
+---
+
+> [!tip] Graph
+> The global Graph hides Sources, Assets, templates, docs, tests, tooling, and machine state by default. Use **Local Graph** while reading an Episode or Entity when you want to inspect its immediate lore neighborhood.

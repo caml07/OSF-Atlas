@@ -1,39 +1,47 @@
 ---
+type: atlas-view
 tags:
   - osf
   - lore
   - moc
-type: lore-map
+cssclasses:
+  - osf-atlas
 ---
 
 # Lore Map
 
-This note will become the curated entry point into the larger OSF lore as recurring relationships become clear.
+Episodes are documents. Entities are in-universe concepts. Lore Threads connect recurring narrative structures without collapsing those concepts into one node.
 
-## Major lore threads
+## Entities
 
-_No established threads yet. These will be added only when the source material supports a recurring relationship._
+![[Entities.base#All Entities]]
 
-## Recurring locations
+### Places
 
-- [[../02 Entities/Places/Places Index|Places Index]]
+![[Entities.base#Places]]
 
-## Organizations
+### Systems
 
-- [[../02 Entities/Organizations/Organizations Index|Organizations Index]]
+![[Entities.base#Systems]]
 
-## Systems
+### Organizations
 
-- [[../02 Entities/Systems/Systems Index|Systems Index]]
+![[Entities.base#Organizations]]
 
-## Phenomena
+### Phenomena
 
-- [[../02 Entities/Phenomena/Phenomena Index|Phenomena Index]]
+![[Entities.base#Phenomena]]
 
-## People
+### People
 
-- [[../02 Entities/People/People Index|People Index]]
+![[Entities.base#People]]
 
-## Personal theories
+## Lore Threads
 
-- [[../04 My Notes/My Theories|My Theories]]
+![[Lore Threads.base#Active Threads]]
+
+## Research
+
+![[Research.base#Recent Notes]]
+
+[[OSF Atlas|Back to Atlas]]
