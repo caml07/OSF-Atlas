@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Grand Chasm (OSF-013)",
+      "status": "confirmed",
+      "target_episode": 13,
+      "target_note": "OSF 013 - Grand Chasm"
+    }
+  ],
+  "episode": 60,
+  "episode_note": "OSF 060 - Grand Chasm The Divide",
+  "primary_entity": "Grand Chasm: The Divide",
+  "updated_at": "2026-09-27T06:48:06.051134+00:00"
+}

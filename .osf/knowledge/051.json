@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Aqua Genesis",
+      "status": "candidate",
+      "target_episode": 46,
+      "target_note": "OSF 046 - Aqua Genesis"
+    }
+  ],
+  "episode": 51,
+  "episode_note": "OSF 051 - Watcher",
+  "primary_entity": "Watcher",
+  "updated_at": "2026-09-27T06:47:38.558560+00:00"
+}

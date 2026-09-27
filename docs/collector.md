@@ -174,3 +174,8 @@ The representative checks now cover:
   to `OSF-014` and `OSF-053`.
 
 The first formal corpus batch `001-010` passed its ingestion gate.
+
+Batch `051-060` was the first formal corpus batch where YouTube exposed real
+manual English caption tracks. Episodes `052`, `054`, `055`, `056`, `058`, and
+`060` preserved those VTT tracks separately from the YouTube description and
+passed source/hash/Reader Source validation without requiring a parser change.

@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Cryo Stabilizer (OSF-041)",
+      "status": "confirmed",
+      "target_episode": 41,
+      "target_note": "OSF 041 - Cryo Stabilizer"
+    }
+  ],
+  "episode": 55,
+  "episode_note": "OSF 055 - Sandseer",
+  "primary_entity": "Sandseer",
+  "updated_at": "2026-09-27T06:47:49.740827+00:00"
+}

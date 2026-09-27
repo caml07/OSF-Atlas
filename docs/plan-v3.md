@@ -14,7 +14,8 @@ Progress:
 - Public-safe GitHub main: **complete**
 - Batch 031–040: **complete**
 - Batch 041–050: **complete**
-- Batch 051–060: pending
+- Batch 051–060: **complete**
+- Batch 061–070: pending
 
 ## Senior review
 

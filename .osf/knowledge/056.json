@@ -1,0 +1,14 @@
+{
+  "connections": [
+    {
+      "evidence_text": "Mourning Hall (OSF-003)",
+      "status": "confirmed",
+      "target_episode": 3,
+      "target_note": "OSF 003 - Mourning Hall"
+    }
+  ],
+  "episode": 56,
+  "episode_note": "OSF 056 - Verdant Relay",
+  "primary_entity": "Verdant Relay",
+  "updated_at": "2026-09-27T06:47:52.537581+00:00"
+}
